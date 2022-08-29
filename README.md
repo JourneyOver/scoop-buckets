@@ -16,5 +16,6 @@ To make a new manifest contribution, please read the [Contributing Guide](https:
 
 Random Bits of information:
 ----------------------------------
-https://www.texttool.com/sha256-online
-https://scoop-docs.vercel.app/docs/concepts/Buckets.html#creating-your-own-bucket
+[Sha256 Online](https://www.texttool.com/sha256-online)
+
+[App Manifest Properties](https://scoop-docs.vercel.app/docs/concepts/App-Manifests.html#a-simple-example)
