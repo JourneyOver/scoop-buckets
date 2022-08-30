@@ -1,0 +1,21 @@
+{
+  "version": "4.1.1.0",
+  "description": "Automatically finds all installed Steam, Epic and Ubisoft games with their respective DLC-related DLL locations on the user's computer, parses SteamCMD, Steam Store and Epic Games Store for user-selected games' DLCs, then provides a very simple graphical interface utilizing the gathered information.",
+  "homepage": "https://github.com/pointfeev/CreamInstaller",
+  "license": {
+    "identifier": "GNU General Public License v3.0",
+    "url": "https://raw.githubusercontent.com/pointfeev/CreamInstaller/main/LICENSE"
+  },
+  "url": "https://github.com/pointfeev/CreamInstaller/releases/download/v4.1.1.0/CreamInstaller.zip",
+  "hash": "69f00d6a5b3b17351f0203ab5acf90442df8c8186ebe7840205a38d0e9d7592a",
+  "shortcuts": [
+    [
+      "CreamInstaller.exe",
+      "CreamInstaller"
+    ]
+  ],
+  "checkver": "github",
+  "autoupdate": {
+    "url": "https://github.com/pointfeev/CreamInstaller/releases/download/v$version/CreamInstaller.zip"
+  }
+}
