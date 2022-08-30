@@ -14,9 +14,6 @@
       "Koalageddon"
     ]
   ],
-  "suggest": {
-    "GUI Editor": "kg-gui"
-  },
   "innosetup": true,
   "checkver": "github",
   "autoupdate": {
