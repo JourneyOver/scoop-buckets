@@ -24,6 +24,7 @@
       "**/tmp": true
   },
   "sortJSON.orderOverride": [
+      "##",
       "version",
       "description",
       "homepage",

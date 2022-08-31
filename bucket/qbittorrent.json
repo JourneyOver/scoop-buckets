@@ -4,7 +4,7 @@
     "homepage": "https://www.qbittorrent.org/",
     "license": {
         "identifier": "GPL-2.0-only",
-        "url": "https://github.com/qbittorrent/qBittorrent/blob/master/COPYING"
+        "url": "https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/COPYING"
     },
     "architecture": {
         "32bit": {

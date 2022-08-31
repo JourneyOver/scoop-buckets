@@ -26,6 +26,9 @@
     "persist": "memreduct.ini",
     "checkver": "softwareVersion\">([\\d.]+)",
     "autoupdate": {
-        "url": "https://github.com/henrypp/memreduct/releases/download/v.$version/memreduct-$version-bin.zip"
+        "url": "https://github.com/henrypp/memreduct/releases/download/v.$version/memreduct-$version-bin.zip",
+        "hash": {
+            "url": "$baseurl/memreduct-$version.sha256"
+        }
     }
 }
