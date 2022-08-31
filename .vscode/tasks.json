@@ -1,0 +1,142 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Check Hashes (Whole repository)",
+      "detail": "Execute checkver against every manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkhashes.ps1",
+      "args": [
+        "*",
+      ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "group": "test",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Check URLs (Whole repository)",
+      "detail": "Execute checkurls against every manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkurls.ps1",
+      "args": [
+        "*",
+      ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "group": "test",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Check Version (Whole repository)",
+      "detail": "Execute checkver against every manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkver.ps1",
+      "args": [
+        "*",
+      ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "group": "test",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Check Hashes (Single manifest)",
+      "detail": "Check Hashes of currently opened manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkhashes.ps1",
+      "args": [
+        "'${fileBasenameNoExtension}'",
+      ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "problemMatcher": [],
+    },
+    {
+      "label": "Check URLs (Single manifest)",
+      "detail": "Check URLs of currently opened manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkurls.ps1",
+      "args": [
+          "'${fileBasenameNoExtension}'",
+        ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "problemMatcher": [],
+    },
+    {
+      "label": "Check Version (Single manifest)",
+      "detail": "Check Version of currently opened manifest.",
+      "type": "shell",
+      "options": {
+        "env": {
+          "SCOOP_DEBUG": "true",
+        },
+      },
+      "command": ".\\bin\\checkver.ps1",
+      "args": [
+          "'${fileBasenameNoExtension}'",
+        ],
+      "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": false,
+        },
+      "problemMatcher": [],
+    }
+  ]
+}

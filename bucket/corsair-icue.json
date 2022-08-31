@@ -1,0 +1,35 @@
+{
+  "version": "4.27.168",
+  "description": "Tool for the customization of functions on Corsair peripherals and components.",
+  "homepage": "https://www.corsair.com/us/en/icue",
+  "license": "Freeware",
+  "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_4.27.168_release.msi#/setup.msi_",
+  "hash": "4c08cca7ac9d329e4e885862e877cc0eec25a23dae9b6265064b57be3fa90181",
+  "installer": {
+    "script": [
+      "# if (!(is_admin)) {",
+      "#     error \"Administrator rights are required to install $app.\"",
+      "#     exit 1",
+      "# }",
+      "",
+      "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs | Out-Null"
+    ]
+  },
+  "uninstaller": {
+    "script": [
+      "# if (!(is_admin)) {",
+      "#     error \"Administrator rights are required to uninstall $app.\"",
+      "#     exit 1",
+      "# }",
+      "",
+      "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs | Out-Null"
+    ]
+  },
+  "checkver": {
+    "url": "https://www.corsair.com/us/en/downloads",
+    "regex": "CORSAIR iCUE v([\\w.]+)"
+  },
+  "autoupdate": {
+    "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_$version_release.msi#/setup.msi_"
+  }
+}
