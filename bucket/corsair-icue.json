@@ -26,8 +26,8 @@
     ]
   },
   "checkver": {
-    "url": "https://www.corsair.com/us/en/downloads",
-    "regex": "CORSAIR iCUE v([\\w.]+)"
+    "url": "https://m.majorgeeks.com/files/details/corsair_utility_engine_(icue)_software.html",
+    "regex": "CORSAIR\\sUtility\\sEngine\\s\\(iCUE\\)\\sSoftware\\s(?<version>[\\d.]+)"
   },
   "autoupdate": {
     "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_$version_release.msi#/setup.msi_"
