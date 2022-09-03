@@ -13,9 +13,6 @@
             "& \"$dir\\Install.ps1\" -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -cache_off -block_update_on -enablenavalt -start_spoti"
         ]
     },
-    "uninstaller": {
-        "script": "Invoke-ExternalCommand \"$Env:Appdata\\Spotify\\Spotify.exe\" -ArgumentList @('/uninstall', '/silent') | Out-Null"
-    },
     "checkver": {
         "regex": "([\\w.-]+)",
         "script": [

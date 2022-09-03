@@ -12,17 +12,8 @@
             "#     exit 1",
             "# }",
             "",
-            "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs | Out-Null"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "# if (!(is_admin)) {",
-            "#     error \"Administrator rights are required to uninstall $app.\"",
-            "#     exit 1",
-            "# }",
-            "",
-            "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs | Out-Null"
+            "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /qn\" -Verb RunAs | Out-Null",
+            "Remove-Item \"$dir\\setup.msi_\""
         ]
     },
     "checkver": {

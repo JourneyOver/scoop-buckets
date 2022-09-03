@@ -11,7 +11,8 @@
     "hash": "43117bcb6edd1981d46ebc8889f08c2cfdf77884042d5ee1f43fce511ffeee09",
     "installer": {
         "script": [
-            "Start-Process \"$dir\\pms.exe\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null"
+            "Start-Process \"$dir\\pms.exe\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
+            "Remove-Item \"$dir\\pms.exe\""
         ]
     },
     "post_install": [
@@ -19,11 +20,6 @@
         "$filepath = \"$ProgramFiles\\Plex\\Plex Media Server\\Plex Media Server.exe\"",
         "& $filepath"
     ],
-    "uninstaller": {
-        "script": [
-            "Start-Process \"$dir\\pms.exe\" -ArgumentList '/uninstall /quiet' -Wait -Verb RunAs | Out-Null"
-        ]
-    },
     "checkver": {
         "url": "https://www.reddit.com/user/samwiseg0/submitted.json?sort=new",
         "jsonpath": "$...title",
