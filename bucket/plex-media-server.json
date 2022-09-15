@@ -1,14 +1,14 @@
 {
     "##": "https://support.plex.tv/articles/201941078-uninstall-plex-media-server/",
-    "version": "1.29.0.6209-9fa696df6",
+    "version": "1.29.0.6219-b1b4d4871",
     "description": "Plex Media Server. Stream content to all of devices, anywhere.",
     "homepage": "https://www.plex.tv/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://support.plex.tv/articles/204096476-license-information/"
     },
-    "url": "https://downloads.plex.tv/plex-media-server-new/1.29.0.6209-9fa696df6/windows/PlexMediaServer-1.29.0.6209-9fa696df6-x86.exe#/pms.exe",
-    "hash": "3bf2380996e8798c83e43c05c460ce24953979036ad93cf6e61602ab79598de6",
+    "url": "https://downloads.plex.tv/plex-media-server-new/1.29.0.6219-b1b4d4871/windows/PlexMediaServer-1.29.0.6219-b1b4d4871-x86.exe#/pms.exe",
+    "hash": "db59b343b49e8d52d25ba0f86ef28c5886bdfde77e4800d53e08aeb577f9192c",
     "installer": {
         "script": [
             "Start-Process \"$dir\\pms.exe\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
