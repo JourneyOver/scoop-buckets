@@ -1,10 +1,10 @@
 {
-    "version": "4.28.174",
+    "version": "4.28.177",
     "description": "Tool for the customization of functions on Corsair peripherals and components.",
     "homepage": "https://www.corsair.com/us/en/icue",
     "license": "Freeware",
-    "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_4.28.174_release.msi#/setup.msi_",
-    "hash": "5e09b36b3bc041d434a827d4011ea8176fb0861a41f5b3287dc4822a0513d5ff",
+    "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_4.28.177_release.msi#/setup.msi_",
+    "hash": "8d08829afb94c2c6745aab148a041d6ceae3a9d19219659fadddcfa3dd256d15",
     "installer": {
         "script": [
             "# if (!(is_admin)) {",
