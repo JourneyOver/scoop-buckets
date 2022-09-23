@@ -7,7 +7,7 @@
         "url": "https://raw.githubusercontent.com/MicaForEveryone/MicaForEveryone/master/LICENSE"
     },
     "suggest": {
-        ".NET Core Runtime": "versions/windowsdesktop-runtime-lts"
+        ".NET Core Runtime": "journeyover/netcore"
     },
     "architecture": {
         "64bit": {
