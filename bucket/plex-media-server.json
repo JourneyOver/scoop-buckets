@@ -26,6 +26,14 @@
         "64bit": {
             "url": "https://downloads.plex.tv/plex-media-server-new/1.29.1.6241-d3d56053f/windows/PlexMediaServer-1.29.1.6241-d3d56053f-x86_64.exe",
             "hash": "086f027d98a8e4481fdfe4645c038ab2d6d02353f31e46147b11fc89547094b1",
+            "pre_install": [
+                "$ProgramFiles86 = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
+                "$filepath86 = \"$ProgramFiles86\\Plex\\Plex Media Server\\unins000.exe\"",
+                "if (Test-Path \"$ProgramFiles86\\Plex\") {",
+                "    warn '32bit version detected, Uninstalling before installing 64bit version...'",
+                "    Start-Process \"$filepath86\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
+                "}"
+            ],
             "installer": {
                 "script": [
                     "Start-Process \"$dir\\$fname\" -ArgumentList '/VERYSILENT /SUPPRESSMSGBOXES' -Wait -Verb RunAs | Out-Null",
