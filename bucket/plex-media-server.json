@@ -27,24 +27,19 @@
             "url": "https://downloads.plex.tv/plex-media-server-new/1.29.1.6260-420892357/windows/PlexMediaServer-1.29.1.6260-420892357-x86_64.exe",
             "hash": "d120b2e30535613fb8125cd78c889ee0b819a080233173c2bbf3947b9efd9bce",
             "pre_install": [
-                "$ProgramFiles86 = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
-                "$filepath86 = \"$ProgramFiles86\\Plex\\Plex Media Server\\unins000.exe\"",
-                "if (Test-Path \"$ProgramFiles86\\Plex\") {",
+                "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
+                "$filepath = \"$ProgramFiles\\Plex\\Plex Media Server\\unins000.exe\"",
+                "if (Test-Path \"$ProgramFiles\\Plex\") {",
                 "    warn '32bit version detected, Uninstalling before installing 64bit version...'",
-                "    Start-Process \"$filepath86\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
+                "    Start-Process \"$filepath\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
                 "}"
             ],
             "installer": {
-                "script": [
-                    "Start-Process \"$dir\\$fname\" -ArgumentList '/VERYSILENT /SUPPRESSMSGBOXES' -Wait -Verb RunAs | Out-Null",
-                    "Remove-Item \"$dir\\$fname\""
+                "args": [
+                    "/verysilent",
+                    "/suppressmsgboxes"
                 ]
-            },
-            "post_install": [
-                "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
-                "$filepath = \"$ProgramFiles\\Plex\\Plex Media Server\\Plex Media Server.exe\"",
-                "& $filepath"
-            ]
+            }
         }
     },
     "checkver": {
