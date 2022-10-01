@@ -1,0 +1,20 @@
+{
+    "version": "6.4.0",
+    "description": "App to automatically participate in raffles on different websites.",
+    "homepage": "https://github.com/tj/git-extras",
+    "license": {
+        "identifier": "MIT",
+        "url": "https://raw.githubusercontent.com/tj/git-extras/master/LICENSE"
+    },
+    "url": "https://github.com/tj/git-extras/archive/6.4.0.zip",
+    "hash": "21c819526ca9e0c73683ad8e3348fac56111496d4e014d4bb7bcb1ea05914d0c",
+    "extract_dir": "git-extras-6.4.0",
+    "post_install": "& \"$dir\\install.cmd\"",
+    "checkver": {
+        "github": "https://github.com/tj/git-extras"
+    },
+    "autoupdate": {
+        "url": "https://github.com/tj/git-extras/archive/$version.zip",
+        "extract_dir": "git-extras-$version"
+    }
+}
