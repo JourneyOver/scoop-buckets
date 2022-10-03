@@ -1,6 +1,6 @@
 {
     "version": "6.4.0",
-    "description": "App to automatically participate in raffles on different websites.",
+    "description": "GIT utilities -- repo summary, repl, changelog population, author commit percentages and more",
     "homepage": "https://github.com/tj/git-extras",
     "license": {
         "identifier": "MIT",
