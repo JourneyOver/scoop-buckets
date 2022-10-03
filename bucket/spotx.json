@@ -19,7 +19,7 @@
             "$app_ver = $matches[1]",
             "",
             "$url2 = 'https://github.com/SpotX-CLI/SpotX-Win/commits/main/Install.ps1'",
-            "$regex2 = '(?sm)Commits on ([\\w\\s,]+)</h2>.*?SpotX/commits/([0-9a-f]{6})'",
+            "$regex2 = '(?sm)Commits on ([\\w\\s,]+)</h2>.*?SpotX-Win/commits/([0-9a-f]{6})'",
             "$cont = $(Invoke-WebRequest $url2).Content",
             "if(!($cont -match $regex2)) { error \"Could match '$regex2' on '$url2'\"; return }",
             "$update_date = $(Get-Date $matches[1]).ToString('yyyyMMdd')",
