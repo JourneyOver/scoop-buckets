@@ -1,10 +1,10 @@
 {
-    "version": "1.5-20221003-40ae67",
+    "version": "1.5-20221005-0432de",
     "description": "Modified spotify client. Blocks ads and updates, and more.",
     "homepage": "https://github.com/SpotX-CLI/SpotX-Win/",
     "license": "MIT",
     "url": "https://raw.githubusercontent.com/SpotX-CLI/SpotX-Win/main/Install.ps1",
-    "hash": "2e7a61b95ec9900c77b1382f6adea7fbbc8599dd1923a82d2c5ef514842d6fa4",
+    "hash": "042340a8523f270b298fb1791c3b5d07cdc4b592974520f5bb8ec28d109a4990",
     "installer": {
         "script": "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex \"& { $((iwr -useb 'https://raw.githubusercontent.com/SpotX-CLI/SpotX-Win/main/Install.ps1').Content) } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -cache_off -block_update_on -start_spoti\""
     },
