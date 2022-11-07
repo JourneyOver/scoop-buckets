@@ -17,8 +17,8 @@
         ]
     },
     "checkver": {
-        "url": "https://m.majorgeeks.com/files/details/corsair_utility_engine_(icue)_software.html",
-        "regex": "CORSAIR\\sUtility\\sEngine\\s\\(iCUE\\)\\sSoftware\\s(?<version>[\\d.]+)"
+        "url": "https://www.guru3d.com/files/index.html",
+        "regex": "Corsair\\sUtility\\sEngine\\sDownload\\s\\(iCUE\\)\\sDownload\\sv(?<version>[\\d.]+)"
     },
     "autoupdate": {
         "url": "http://downloads.corsair.com/Files/CUE/iCUESetup_$version_release.msi#/setup.msi_"

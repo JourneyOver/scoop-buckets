@@ -4,7 +4,7 @@
     "homepage": "https://brave.com/download-nightly/",
     "license": {
         "identifier": "Freeware,BSD-3-Clause,GPL-3.0-only,...",
-        "url": "https://github.com/brave/brave-browser/blob/master/LICENSE"
+        "url": "https://raw.githubusercontent.com/brave/brave-browser/master/LICENSE"
     },
     "architecture": {
         "64bit": {
