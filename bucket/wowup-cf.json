@@ -14,12 +14,6 @@
             "Remove-Item \"$dir\\setup.exe\""
         ]
     },
-    "shortcuts": [
-        [
-            "WowUp.exe",
-            "WowUp"
-        ]
-    ],
     "checkver": {
         "url": "https://api.github.com/repos/WowUp/WowUp.CF/releases",
         "jsonpath": "$[0].tag_name",
