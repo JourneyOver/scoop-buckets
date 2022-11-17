@@ -1,6 +1,6 @@
 {
     "##": "https://support.plex.tv/articles/201941078-uninstall-plex-media-server/",
-    "version": "1.30.0.6359-1185e28d9",
+    "version": "1.30.0.6406-f3f2fcc0a",
     "description": "Plex Media Server. Stream content to all of devices, anywhere.",
     "homepage": "https://www.plex.tv/",
     "license": {
@@ -9,8 +9,8 @@
     },
     "architecture": {
         "32bit": {
-            "url": "https://downloads.plex.tv/plex-media-server-new/1.30.0.6359-1185e28d9/windows/PlexMediaServer-1.30.0.6359-1185e28d9-x86.exe",
-            "hash": "b81c772856272c6d57467d7e48b9c820a7bd4f69d288c4b9651418d5006aa576",
+            "url": "https://downloads.plex.tv/plex-media-server-new/1.30.0.6406-f3f2fcc0a/windows/PlexMediaServer-1.30.0.6406-f3f2fcc0a-x86.exe",
+            "hash": "f10efed22b45b989cd4e2c757c0909138f3e2e8e0cf21172823be96e1aaadcf2",
             "installer": {
                 "script": [
                     "Start-Process \"$dir\\$fname\" -ArgumentList '/quiet' -Wait -Verb RunAs | Out-Null",
@@ -24,8 +24,8 @@
             ]
         },
         "64bit": {
-            "url": "https://downloads.plex.tv/plex-media-server-new/1.30.0.6359-1185e28d9/windows/PlexMediaServer-1.30.0.6359-1185e28d9-x86_64.exe",
-            "hash": "e02375585e31c4ab9d1d451e5dd62521c5776cd15f6ce8e91b5924efb6ae184a",
+            "url": "https://downloads.plex.tv/plex-media-server-new/1.30.0.6406-f3f2fcc0a/windows/PlexMediaServer-1.30.0.6406-f3f2fcc0a-x86_64.exe",
+            "hash": "8a5d65393bf816508c0b91b7e932d91d527ca02f83d7b4644b38f9d10f6c723c",
             "pre_install": [
                 "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
                 "$filepath = \"$ProgramFiles\\Plex\\Plex Media Server\\unins000.exe\"",
