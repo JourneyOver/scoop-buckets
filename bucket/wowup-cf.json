@@ -1,13 +1,13 @@
 {
-    "version": "2.9.2-beta.3",
+    "version": "2.9.2-beta.4",
     "description": "World of Warcraft addon updater. (CurseForge version)",
     "homepage": "https://github.com/WowUp/WowUp.CF",
     "license": {
         "identifier": "GPL-3.0-or-later",
         "url": "https://raw.githubusercontent.com/WowUp/WowUp.CF/main/LICENSE"
     },
-    "url": "https://github.com/WowUp/WowUp.CF/releases/download/v2.9.2-beta.3/WowUp-CF-Setup-2.9.2-beta.3.exe#/setup.exe",
-    "hash": "95b0851f26f94a2af295a747814f1a2fe6439ade6ffb0f3c9eb12c486f2df0b3",
+    "url": "https://github.com/WowUp/WowUp.CF/releases/download/v2.9.2-beta.4/WowUp-CF-Setup-2.9.2-beta.4.exe#/setup.exe",
+    "hash": "170119189b0f704e8bd3b68d8575f522a417bb22809e2dbe9032adf52d91a4af",
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null",
