@@ -61,7 +61,6 @@
   "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.defaultFormatter": "richie5um2.vscode-sort-json",
   "editor.formatOnSave": true,
   "html.format.enable": false
 }
