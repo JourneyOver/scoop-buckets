@@ -6,7 +6,7 @@
     "url": "https://raw.githubusercontent.com/SpotX-CLI/SpotX-Win/main/Install.ps1",
     "hash": "228a46d9f5612ec637a66080d92bba9c808cd72983733f920d97430dd19b129b",
     "installer": {
-        "script": "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex \"& { $((iwr -useb 'https://raw.githubusercontent.com/SpotX-CLI/SpotX-Win/main/Install.ps1').Content) } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -cache_off -block_update_on -start_spoti\""
+        "script": "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex \"& { $((iwr -useb 'https://raw.githubusercontent.com/SpotX-CLI/SpotX-Win/main/Install.ps1').Content) } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -left_sidebar_on -cache_off -block_update_on -start_spoti\""
     },
     "checkver": {
         "regex": "([\\w.-]+)",
