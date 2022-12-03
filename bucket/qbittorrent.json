@@ -1,5 +1,5 @@
 {
-    "version": "4.4.5",
+    "version": "4.5.0",
     "description": "Free and reliable P2P Bittorent client.",
     "homepage": "https://www.qbittorrent.org/",
     "license": {
@@ -7,13 +7,9 @@
         "url": "https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/COPYING"
     },
     "architecture": {
-        "32bit": {
-            "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.4.5/qbittorrent_4.4.5_setup.exe#/dl.7z",
-            "hash": "fec32f28bd20c917298bc774d206b8b7d7c2b7b1645bf1742b0ef8477c0866ab"
-        },
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.4.5/qbittorrent_4.4.5_x64_setup.exe#/dl.7z",
-            "hash": "efb0298fae1578033a334ba3adbe0e93ea15239d623a26ce11f230eb0af8654a"
+            "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.5.0/qbittorrent_4.5.0_x64_setup.exe#/dl.7z",
+            "hash": "14ceeccc4473e02417726cd01614b6c1cc9556ab3aa899118552af82d69db22a"
         }
     },
     "pre_install": [
@@ -52,13 +48,6 @@
     },
     "autoupdate": {
         "architecture": {
-            "32bit": {
-                "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_setup.exe#/dl.7z",
-                "hash": {
-                    "url": "https://www.qbittorrent.org/download.php",
-                    "regex": "32-bit.*\\s+.*<code>$checksum</code>"
-                }
-            },
             "64bit": {
                 "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_x64_setup.exe#/dl.7z",
                 "hash": {
