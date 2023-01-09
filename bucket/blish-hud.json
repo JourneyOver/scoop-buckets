@@ -1,13 +1,13 @@
 {
-    "version": "0.11.7",
+    "version": "1.0.0",
     "description": "A Guild Wars 2 overlay with extreme extensibility through compiled modules.",
     "homepage": "https://blishhud.com",
     "license": {
         "identifier": "MIT",
         "url": "https://raw.githubusercontent.com/blish-hud/Blish-HUD/dev/LICENSE"
     },
-    "url": "https://github.com/blish-hud/Blish-HUD/releases/download/v0.11.7/Blish.HUD.0.11.7.zip",
-    "hash": "bd83d07885d7eeb0c0c560ede2463dd47ddcac222d621243bd78a5624458b26d",
+    "url": "https://github.com/blish-hud/Blish-HUD/releases/download/v1.0.0/Blish.HUD.1.0.0.zip",
+    "hash": "4fecf53ca9424c7690dccdcb246b5a49b6cbbc15121c51fe49281b830e04f83a",
     "shortcuts": [
         [
             "Blish HUD.exe",
