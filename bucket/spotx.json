@@ -1,10 +1,10 @@
 {
-    "version": "1.7-20230121-88758f",
+    "version": "1.7-20230129-78d703",
     "description": "Modified spotify client. Blocks ads and updates, and more.",
     "homepage": "https://github.com/amd64fox/SpotX",
     "license": "MIT",
     "url": "https://raw.githubusercontent.com/amd64fox/SpotX/main/Install.ps1",
-    "hash": "c49742d791605ded0c54df19d55fcea4d0597541d1572480cfe38152080a22cd",
+    "hash": "b8e4910f47bb5f36829de3856264f8eb46ac282251d3df098d58cbe6b6e7694e",
     "installer": {
         "script": "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex \"& { $((iwr -useb 'https://raw.githubusercontent.com/amd64fox/SpotX/main/Install.ps1').Content) } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -cache_off -block_update_on -start_spoti\""
     },
