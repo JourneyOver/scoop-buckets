@@ -1,7 +1,7 @@
 {
     "version": "2.9.2",
     "description": "World of Warcraft addon updater. (CurseForge version)",
-    "homepage": "https://github.com/WowUp/WowUp.CF",
+    "homepage": "https://wowup.io/",
     "license": {
         "identifier": "GPL-3.0-or-later",
         "url": "https://raw.githubusercontent.com/WowUp/WowUp.CF/main/LICENSE"
