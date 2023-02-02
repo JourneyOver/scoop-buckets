@@ -16,6 +16,10 @@
             "Remove-Item \"$dir\\setup.msi_\""
         ]
     },
+    "post_install": [
+        "Rename-Item -PATH \"$([Environment]::GetFolderPath('ProgramFiles'))\\Corsair\\CORSAIR iCUE 4 Software\\cpuidsdk.dll\" -NewName \"cpuidsdk.dll.bak\"",
+        "Rename-Item -PATH \"$([Environment]::GetFolderPath('ProgramFiles'))\\Corsair\\CORSAIR iCUE 4 Software\\cpuidsdk64.dll\" -NewName \"cpuidsdk64.dll.bak\""
+    ],
     "checkver": {
         "url": "https://www.guru3d.com/files-details/corsair-utility-engine-download-icue-download.html",
         "regex": "Corsair[\\s]+Utility[\\s]+Engine[\\s]+Download[\\s]+\\(iCUE\\)[\\s]+Download[\\s]+v(?<version>[\\d\\.]+)"
