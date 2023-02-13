@@ -8,7 +8,8 @@
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\Configurations\")) {",
         "   New-Item \"$persist_dir\\Configurations\" -ItemType Directory -Force | Out-Null",
-        "}"
+        "}",
+        "Get-Process -Name \"FanControl\" -ErrorAction SilentlyContinue | Stop-Process -Force"
     ],
     "shortcuts": [
         [
