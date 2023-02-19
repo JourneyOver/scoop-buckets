@@ -33,7 +33,8 @@
         "        Copy-Item \"$persist_dir\\..\\qbittorrent-portable\\profile\\qBittorrent\\config\" \"$persist_dir\\profile\\qBittorrent\\config\" -Recurse | Out-Null",
         "        Copy-Item \"$persist_dir\\..\\qbittorrent-portable\\profile\\qBittorrent\\data\" \"$persist_dir\\profile\\qBittorrent\\data\" -Recurse | Out-Null",
         "    }",
-        "}"
+        "}",
+        "Stop-Process -Name 'qbittorrent' -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 2"
     ],
     "shortcuts": [
         [
