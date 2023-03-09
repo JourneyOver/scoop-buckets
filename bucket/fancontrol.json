@@ -9,8 +9,9 @@
         "if (!(Test-Path \"$persist_dir\\Configurations\")) {",
         "   New-Item \"$persist_dir\\Configurations\" -ItemType Directory -Force | Out-Null",
         "}",
-        "cmd /c taskkill /IM 'FanControl.exe'",
-        "Start-Sleep -Seconds 10"
+        "if (Get-Process -Name \"FanControl\" -ErrorAction SilentlyContinue) {",
+        "   Stop-Process -Name \"FanControl\" -Force",
+        "}"
     ],
     "shortcuts": [
         [
