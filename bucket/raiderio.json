@@ -1,13 +1,13 @@
 {
-    "version": "2.2.2",
+    "version": "3.0.6",
     "description": "View Mythic+ Scores, Raid Progress, and Recruitment Status In-Game.",
     "homepage": "https://raider.io/",
     "license": {
         "identifier": "All rights reserved.",
         "url": "https://raw.githubusercontent.com/RaiderIO/raiderio-addon/develop/LICENSE"
     },
-    "url": "https://github.com/RaiderIO/raiderio-client-builds/releases/download/v2.2.2/RaiderIO_Client_Setup.exe#/setup.exe",
-    "hash": "a9ee502dd12428b7812742e34355cee36eb019a33e2041127363c941cfe333eb",
+    "url": "https://github.com/RaiderIO/raiderio-client-builds/releases/download/v3.0.6/RaiderIO_Client_Setup.exe#/setup.exe",
+    "hash": "61fa27a37d32272ac5f4bc0d75706a2ed05fdc093432479e32b27ba5828591cd",
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null",
