@@ -1,0 +1,23 @@
+{
+    "version": "3.4.3",
+    "description": "LockHunter is a foolproof file unlocker. It is a free tool to delete files blocked by something you do not know. LockHunter is useful for fighting against malware, and other programs that are blocking files without a reason. Unlike other similar tools it deletes files into the recycle bin so you may restore them if deleted by mistake.",
+    "homepage": "https://lockhunter.com/",
+    "license": "Freeware",
+    "url": "https://lockhunter.com/assets/exe/lockhuntersetup_3-4-3.exe",
+    "hash": "ce9a8b33bc156e00f7fea7ef40049a7da0d4531243e7511a29b36d416b904914",
+    "installer": {
+        "args": [
+            "/VERYSILENT",
+            "/SUPPRESSMSGBOXES",
+            "/NORESTART",
+            "/SP-"
+        ]
+    },
+    "checkver": {
+        "url": "https://lockhunter.com/",
+        "regex": "Version:\\s+([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://lockhunter.com/assets/exe/lockhuntersetup_$dashVersion.exe"
+    }
+}
