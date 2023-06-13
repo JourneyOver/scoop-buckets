@@ -6,6 +6,7 @@
         "identifier": "GPL-2.0-only",
         "url": "https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/COPYING"
     },
+    "notes": "Web UI Theme https://github.com/WDaan/VueTorrent",
     "architecture": {
         "64bit": {
             "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.5.2/qbittorrent_4.5.2_x64_setup.exe#/dl.7z",
@@ -44,17 +45,12 @@
     ],
     "persist": "profile",
     "checkver": {
-        "url": "https://www.qbittorrent.org/download.php",
-        "regex": "Latest:\\s+v([\\d.]+)"
+        "sourceforge": "qbittorrent/qbittorrent-win32"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_x64_setup.exe#/dl.7z",
-                "hash": {
-                    "url": "https://www.qbittorrent.org/download.php",
-                    "regex": "64-bit.*\\s+.*<code>$checksum</code>"
-                }
+                "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_x64_setup.exe#/dl.7z"
             }
         }
     }
