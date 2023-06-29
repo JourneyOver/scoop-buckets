@@ -4,8 +4,8 @@
     "homepage": "https://www.sys-worx.net/nv-updater-eng/",
     "license": "Freeware",
     "notes": "To run at startup, right-click on the tray icon, click Options, and select 'Autorun NV Updater at Windows startup'.",
-    "url": "https://www.sys-worx.net/attachment/95-nv-updater-nosetup-0.6.7.0-zip/#/dl.7z",
-    "hash": "33c3b91f9b2b69bf356fd76e7950c3c7f7e039bd4a7f3d11d21a9ee4d4d42f25",
+    "url": "https://www.sys-worx.net/attachment/124-nv-updater-nosetup-0.6.7.0-zip/#/dl.7z",
+    "hash": "31f69e3c77bd5efd51cb96cb6ee7f9ab1d194ac359efa3a43a0b2162f1993801",
     "bin": "nv_updater.exe",
     "shortcuts": [
         [
@@ -14,10 +14,22 @@
         ]
     ],
     "checkver": {
-        "url": "https://www.sys-worx.net/filebase/file/11-nv-updater-nvidia-driver-updater/#versions",
-        "regex": "softwareVersion\">([\\d.]+)"
+        "regex": "(?<version>[\\w.]+)-(?<build>[\\w.]+)",
+        "replace": "${version}",
+        "script": [
+            "try {",
+            "    $url = 'https://www.sys-worx.net/filebase/file/11-nv-updater-nvidia-driver-updater/#versions'",
+            "    $response = Invoke-WebRequest -Uri $url",
+            "    $content = $response.Content",
+            "    $nvupdaterVersion = [regex]::Match($content, 'softwareVersion\">(?<version>[\\d.]+)').Groups['version'].Value",
+            "    $updateURL = [regex]::Match($content, '(?<build>[\\d.]+)-nv-updater-nosetup-(\\d.+)-zip').Groups['build'].Value",
+            "    Write-Output \"$nvupdaterVersion-$updateURL\"",
+            "} catch {",
+            "    throw $_.Exception.Message",
+            "}"
+        ]
     },
     "autoupdate": {
-        "url": "https://www.sys-worx.net/attachment/95-nv-updater-nosetup-$version-zip/#/dl.7z"
+        "url": "https://www.sys-worx.net/attachment/$matchBuild-nv-updater-nosetup-$version-zip/#/dl.7z"
     }
 }
