@@ -23,9 +23,11 @@
         "cookies.jar"
     ],
     "checkver": {
-        "github": "https://github.com/DevilXD/TwitchDropsMiner"
+        "url": "https://github.com/DevilXD/TwitchDropsMiner/actions/workflows/ci.yml?query=branch%3Amaster+is%3Asuccess",
+        "regex": "<a class=\"Link--primary css-truncate css-truncate-target\" .*? aria-label=\"Run (?<runCount>[\\d]+) of.*? href=\".*?/runs/(?<runId>[\\d]+?)\">[\\S\\s]+? datetime=\"(?<buildDate>\\d{4}-\\d{2}-\\d{2})T",
+        "replace": "${buildDate}-run${runCount}-id${runId}"
     },
     "autoupdate": {
-        "url": "https://github.com/DevilXD/TwitchDropsMiner/releases/download/v$version/Twitch.Drops.Miner.zip"
+        "url": "https://github.com/DevilXD/TwitchDropsMiner/releases/download/dev-build/Twitch.Drops.Miner.Windows.zip"
     }
 }
