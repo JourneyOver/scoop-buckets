@@ -1,5 +1,5 @@
 {
-    "version": "4.14",
+    "version": "4.14.0.1",
     "description": "A hard drive disk space analyser that finds the files and folders using the most space.",
     "homepage": "https://diskanalyzer.com/",
     "license": "Unknown",
