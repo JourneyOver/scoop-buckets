@@ -1,13 +1,13 @@
 {
-    "version": "5.1.2",
+    "version": "5.1.1",
     "description": "Updates WeakAuras installed from Wago.",
     "homepage": "https://weakauras.wtf/",
     "license": {
         "identifier": "GPL-2.0-or-later",
         "url": "https://raw.githubusercontent.com/WeakAuras/WeakAuras-Companion/main/LICENSE"
     },
-    "url": "https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v5.1.2/WeakAuras-Companion-Setup-5.1.2.exe#/setup.exe",
-    "hash": "08106358a661f5e03fce3ab9ff9c2fcc7ad1a564547da713174c0946fea485da",
+    "url": "https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v5.1.1/WeakAuras-Companion-Setup-5.1.1.exe#/setup.exe",
+    "hash": "53a7e81636890d1562b35bdda5e941a8addc85977113e52aefde6692614fed5d",
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null",
