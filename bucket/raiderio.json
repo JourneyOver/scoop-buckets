@@ -15,9 +15,7 @@
         ]
     },
     "checkver": {
-        "url": "https://api.github.com/repos/RaiderIO/raiderio-client-builds/releases",
-        "jsonpath": "$[0].tag_name",
-        "regex": "(?!v)(.+)"
+        "github": "https://github.com/RaiderIO/raiderio-client-builds"
     },
     "autoupdate": {
         "url": "https://github.com/RaiderIO/raiderio-client-builds/releases/download/v$version/RaiderIO_Client_Setup.exe#/setup.exe"
