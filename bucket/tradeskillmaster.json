@@ -4,7 +4,7 @@
     "homepage": "https://www.tradeskillmaster.com/",
     "license": "Freeware",
     "url": "https://www.tradeskillmaster.com/download/setup.exe",
-    "hash": "c8d82ee2bd404fd3ca1c78497e3c125e9cdc6fa3106e30c668632aca0a62e6e2",
+    "hash": "41d67d1d9609edb28321733357106a93f693aa830f1490452473db91a2910d8b",
     "installer": {
         "args": [
             "/VERYSILENT",
