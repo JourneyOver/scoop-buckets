@@ -43,7 +43,7 @@
         }
     },
     "checkver": {
-        "url": "https://www.reddit.com/user/samwiseg0/submitted.json?sort=new",
+        "url": "https://old.reddit.com/user/samwiseg0/submitted.json?sort=new",
         "jsonpath": "$...title",
         "regex": "PMS Version Available - (?<version>[\\d.]+-[a-fA-F0-9]{9})"
     },

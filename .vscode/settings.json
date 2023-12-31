@@ -55,9 +55,9 @@
       "autoupdate"
   ],
   "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.fixAll.sortJSON": true
-    },
+    "source.fixAll": "explicit",
+    "source.fixAll.sortJSON": "explicit"
+},
   "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features"
   },
