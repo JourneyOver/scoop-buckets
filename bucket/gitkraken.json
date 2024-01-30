@@ -17,11 +17,11 @@
         ]
     ],
     "checkver": {
-        "url": "https://release.gitkraken.com/win64/RELEASES?id=gitkraken&localVersion=0&arch=amd64",
+        "url": "https://release.gitkraken.com/windows/RELEASES",
         "regex": "gitkraken-([\\d.]+)-full\\.nupkg",
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://release.gitkraken.com/win64/gitkraken-$version-full.nupkg"
+        "url": "https://release.gitkraken.com/windows/gitkraken-$version-full.nupkg"
     }
 }
