@@ -1,13 +1,13 @@
 {
-    "version": "9.11.1",
+    "version": "9.12.0",
     "description": "A Git client which helps you track and manage changes to your code.",
     "homepage": "https://www.gitkraken.com/",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.gitkraken.com/eula"
     },
-    "url": "https://release.gitkraken.com/windows/gitkraken-9.11.1-full.nupkg",
-    "hash": "25846da424d48ca6fa28a038959f9ad1dc61bfb36432fc50316abaa64f479ae5",
+    "url": "https://release.gitkraken.com/windows/gitkraken-9.12.0-full.nupkg",
+    "hash": "309eca997b5950bcc71cd6a75b5e7dd99aee6de685d89228ad36ff0d464793f3",
     "extract_dir": "lib\\net45",
     "bin": "gitkraken.exe",
     "shortcuts": [
