@@ -1,13 +1,13 @@
 {
-    "version": "1.86.1.4076-a3ab948d",
+    "version": "1.87.2.87-87488d5a",
     "description": "Official Plex client",
     "homepage": "https://www.plex.tv/apps-devices/#modal-devices-plex-for-windows",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.plex.tv/media-server-downloads/?platform=windows#remodal-terms"
     },
-    "url": "https://downloads.plex.tv/plex-desktop/1.86.1.4076-a3ab948d/windows/Plex-1.86.1.4076-a3ab948d-x86_64.exe#/setup.exe",
-    "hash": "049c72c2b97e8b4f71e3a306e7f3fba8a06284fc8982fc6df82cd27496d3ad26",
+    "url": "https://downloads.plex.tv/plex-desktop/1.87.2.87-87488d5a/windows/Plex-1.87.2.87-87488d5a-x86_64.exe#/setup.exe",
+    "hash": "76bd9d588e45e34a848d815fce706f7fc96ff13e1c240119f778b41c88bf11fd",
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null",
