@@ -5,6 +5,12 @@
     "license": "Unknown",
     "url": "https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.6.8.exe#/dl.7z",
     "hash": "b654dda94a9066848e0e0ecce1ac4bd75bd9c8e313291acc32d51ecff8f65988",
+    "installer": {
+        "script": [
+            "Move-Item \"$dir\\DDU v*\\*\" \"$dir\\\" -Force | Out-Null",
+            "Remove-Item \"$dir\\DDU v*\" -Force | Out-Null"
+        ]
+    },
     "shortcuts": [
         [
             "Display Driver Uninstaller.exe",
