@@ -1,5 +1,5 @@
 {
-    "version": "0.0.0",
+    "version": "10.0.0.499",
     "description": "The NVIDIA app is the essential companion for PC gamers and creators. Keep your PC up to date with the latest NVIDIA drivers and technology.",
     "homepage": "https://www.nvidia.com/en-us/software/nvidia-app/",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://www.nvidia.com/en-us/about-nvidia/eula-agreement"
     },
     "url": "https://us.download.nvidia.com/nvapp/client/10.0.0.499/NVIDIA_app_beta_v10.0.0.499.exe#/setup.exe",
-    "hash": "fee6c20ff91039b8aaf23eccf19fd2e66b35670bcf5d20f9d4ca79e15dd1d5af",
+    "hash": "7ac6724f4d5cfb0b2c0ef97e6a249dbdc73a92e077bbe4d2efab37df666ad452",
     "pre_install": [
         "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList '-s' -RunAs | Out-Null",
         "Remove-Item \"$dir\\setup.exe\" | Out-Null"
