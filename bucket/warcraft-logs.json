@@ -1,10 +1,10 @@
 {
-    "version": "8.3.18",
+    "version": "8.3.19",
     "description": "Warcraft Logs Uploader.",
     "homepage": "https://www.warcraftlogs.com/",
     "license": "Freeware",
-    "url": "https://github.com/RPGLogs/Uploaders-warcraftlogs/releases/download/v8.3.18/warcraftlogs-v8.3.18.exe#/setup.exe",
-    "hash": "ebc267fe46e5dc96b8cae7b77f3f83b4d8da00d276f4c311e9efbf14dd9d5568",
+    "url": "https://github.com/RPGLogs/Uploaders-warcraftlogs/releases/download/v8.3.19/warcraftlogs-v8.3.19.exe#/setup.exe",
+    "hash": "cd4c9c6126793ad67a37100311f0bdc060c2dbaeccfb535d63854aab96626ddd",
     "installer": {
         "script": [
             "Start-Process \"$dir\\setup.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null",
