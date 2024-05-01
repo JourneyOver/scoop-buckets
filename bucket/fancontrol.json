@@ -1,11 +1,11 @@
 {
-    "version": "187",
+    "version": "188",
     "description": "A highly customizable fan controlling software for the Windows OS.",
     "homepage": "https://getfancontrol.com/",
     "license": "Freeware",
     "notes": "You will need to force close fancontrol before running this, I have tried multiple methods to force close it through the installer but it doesn't work. I will try to fix this in the future.",
     "url": "https://raw.githubusercontent.com/Rem0o/FanControl.Releases/master/FanControl.zip",
-    "hash": "a933d20c70cbf1bfd1a0a4adcb405a9de14e62edca6000c9437e37f3a7348fd7",
+    "hash": "a24418704af47a0113f87ef020d24303234d3c2867eb779ead1d9b0c49699509",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\Configurations\")) {",
         "   New-Item \"$persist_dir\\Configurations\" -ItemType Directory -Force | Out-Null",
