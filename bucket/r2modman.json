@@ -17,7 +17,7 @@
     ],
     "checkver": {
         "url": "https://api.github.com/repos/ebkr/r2modmanPlus/releases",
-        "jsonpath": "$[0].tag_name",
+        "jsonpath": "$..tag_name",
         "regex": "(?!v)(.+)"
     },
     "autoupdate": {
