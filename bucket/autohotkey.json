@@ -16,7 +16,7 @@
     },
     "checkver": {
         "url": "https://www.autohotkey.com/download/2.0/version.txt",
-        "regex": "([\\d.]+)"
+        "regex": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },
     "autoupdate": {
         "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v$version/AutoHotkey_$version_setup.exe#/setup.exe"

@@ -17,7 +17,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/WeakAuras/WeakAuras-Companion/releases",
         "jsonpath": "$..tag_name",
-        "regex": "([\\d.]+)"
+        "regex": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },
     "autoupdate": {
         "url": "https://github.com/WeakAuras/WeakAuras-Companion/releases/download/v$version/WeakAuras-Companion-Setup-$version.exe#/setup.exe"
