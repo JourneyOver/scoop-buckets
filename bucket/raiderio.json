@@ -17,7 +17,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/RaiderIO/raiderio-client-builds/releases",
         "jsonpath": "$..tag_name",
-        "regex": "(?!v)(.+)"
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://github.com/RaiderIO/raiderio-client-builds/releases/download/v$version/RaiderIO_Client_Setup.exe#/setup.exe"

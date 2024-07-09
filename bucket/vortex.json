@@ -17,7 +17,7 @@
     "checkver": {
         "url": "https://api.github.com/repos/Nexus-Mods/Vortex/releases",
         "jsonpath": "$..tag_name",
-        "regex": "(?!v)(.+)"
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://github.com/Nexus-Mods/Vortex/releases/download/v$version/vortex-setup-$version.exe#/setup.exe"
