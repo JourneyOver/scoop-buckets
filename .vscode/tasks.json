@@ -9,22 +9,22 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkhashes.ps1",
       "args": [
-        "*",
+        "*"
       ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
       "group": "test",
-      "problemMatcher": [],
+      "problemMatcher": []
     },
     {
       "label": "Check URLs (Whole repository)",
@@ -32,22 +32,22 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkurls.ps1",
       "args": [
-        "*",
+        "*"
       ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
       "group": "test",
-      "problemMatcher": [],
+      "problemMatcher": []
     },
     {
       "label": "Check Version (Whole repository)",
@@ -55,22 +55,22 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkver.ps1",
       "args": [
-        "*",
+        "*"
       ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
       "group": "test",
-      "problemMatcher": [],
+      "problemMatcher": []
     },
     {
       "label": "Check Hashes (Single manifest)",
@@ -78,21 +78,21 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkhashes.ps1",
       "args": [
-        "'${fileBasenameNoExtension}'",
+        "'${fileBasenameNoExtension}'"
       ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
-      "problemMatcher": [],
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
     },
     {
       "label": "Check URLs (Single manifest)",
@@ -100,21 +100,21 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkurls.ps1",
       "args": [
-          "'${fileBasenameNoExtension}'",
-        ],
+        "'${fileBasenameNoExtension}'"
+      ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
-      "problemMatcher": [],
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
     },
     {
       "label": "Check Version (Single manifest)",
@@ -122,21 +122,48 @@
       "type": "shell",
       "options": {
         "env": {
-          "SCOOP_DEBUG": "true",
-        },
+          "SCOOP_DEBUG": "true"
+        }
       },
       "command": ".\\bin\\checkver.ps1",
       "args": [
-          "'${fileBasenameNoExtension}'",
-        ],
+        "'${fileBasenameNoExtension}'"
+      ],
       "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": false,
-        },
-      "problemMatcher": [],
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Uninstall Package",
+      "type": "shell",
+      "command": "scoop",
+      "args": [
+        "uninstall",
+        "'${fileBasenameNoExtension}'",
+        "-p"
+      ],
+      "runOptions": {
+        "reevaluateOnRerun": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Package",
+      "type": "shell",
+      "command": "scoop",
+      "args": [
+        "install",
+        "'${file}'"
+      ],
+      "runOptions": {
+        "reevaluateOnRerun": false
+      },
+      "problemMatcher": []
     }
   ]
 }
