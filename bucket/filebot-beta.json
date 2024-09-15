@@ -29,7 +29,7 @@
             "    $dateNumber = [DateTime]::ParseExact($timestamp, 'yyyy-MM-dd HH:mm', $null).ToString('yyMMdd.HHmm')",
             "    Write-Output \"$filebotVersion-$dateNumber\"",
             "} catch {",
-            "    throw $_.Exception.Message",
+            "    Write-Error $_.Exception.Message",
             "}"
         ]
     },
