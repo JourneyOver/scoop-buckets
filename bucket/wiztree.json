@@ -1,10 +1,10 @@
 {
-    "version": "4.21",
+    "version": "4.22",
     "description": "A hard drive disk space analyser that finds the files and folders using the most space.",
     "homepage": "https://diskanalyzer.com/",
     "license": "Unknown",
-    "url": "https://diskanalyzer.com/files/wiztree_4_21_portable.zip",
-    "hash": "9983941e7b45663539b88c562de54fa32f5df1ff47bc9f762f2306af900f97f7",
+    "url": "https://diskanalyzer.com/files/wiztree_4_22_portable.zip",
+    "hash": "4e499c3d44823863532189fbcbef21afbc1d00fc4e312cb17b044ff3e50c5147",
     "architecture": {
         "32bit": {
             "bin": "WizTree.exe",
