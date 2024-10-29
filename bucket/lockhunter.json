@@ -15,7 +15,7 @@
     },
     "checkver": {
         "url": "https://lockhunter.com/",
-        "regex": "Version:\\s+([\\d.]+)"
+        "re": "Version:\\s+([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://lockhunter.com/assets/exe/lockhuntersetup_$dashVersion.exe"

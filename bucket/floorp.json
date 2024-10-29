@@ -4,12 +4,8 @@
     "homepage": "https://floorp.app/en/",
     "license": "MPL-2.0",
     "depends": "journey/libportable",
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v11.19.1/floorp-win64.installer.exe#/dl.7z",
-            "hash": "945e8dd9313d96c0e3077de0408f5b025c3015b543fea0c7cb56a5b6c06bfcfb"
-        }
-    },
+    "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v11.19.1/floorp-win64.installer.exe#/dl.7z",
+    "hash": "945e8dd9313d96c0e3077de0408f5b025c3015b543fea0c7cb56a5b6c06bfcfb",
     "pre_install": [
         "if ($env:CI -eq \"true\") { return }",
         "Remove-Item \"$dir\\setup.exe\", \"$dir\\core\\updater.*\" -Force",
@@ -37,10 +33,6 @@
         "github": "https://github.com/Floorp-Projects/Floorp"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v$version/floorp-win64.installer.exe#/dl.7z"
-            }
-        }
+        "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v$version/floorp-win64.installer.exe#/dl.7z"
     }
 }

@@ -34,7 +34,7 @@
     "persist": "WizTree3.ini",
     "checkver": {
         "url": "https://diskanalyzer.com/download",
-        "regex": "<h4>WizTree ([\\d.]+)"
+        "re": "<h4>WizTree ([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://diskanalyzer.com/files/wiztree_$majorVersion_$minorVersion_portable.zip"

@@ -26,7 +26,7 @@
     ],
     "checkver": {
         "url": "https://www.mp3tag.de/en/changelog.html",
-        "regex": "REL: VERSION ([\\d.\\w]+)"
+        "re": "REL: VERSION ([\\d.\\w]+)"
     },
     "autoupdate": {
         "url": "https://download.mp3tag.de/mp3tagv$cleanVersion-x64-setup.exe#/dl.7z"

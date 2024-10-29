@@ -15,7 +15,7 @@
     },
     "checkver": {
         "url": "http://www.uwe-sieber.de/drivetools_e.html",
-        "regex": "DriveCleanup\\s+V([\\d.]+)"
+        "re": "DriveCleanup\\s+V([\\d.]+)"
     },
     "autoupdate": {
         "url": "http://www.uwe-sieber.de/files/drivecleanup.zip"

@@ -7,7 +7,7 @@
         "url": "https://www.gitkraken.com/eula"
     },
     "url": "https://release.gitkraken.com/windows/gitkraken-10.4.1-full.nupkg",
-    "hash": "6bacda715c3887801c38e458eed28d3df7ac9a9e5a48ee0db87830d7c79a3f14",
+    "hash": "sha1:f2e034c6d15612e36d0d155d0b60e289a8f1344c",
     "extract_dir": "lib\\net45",
     "bin": "gitkraken.exe",
     "shortcuts": [
@@ -17,11 +17,14 @@
         ]
     ],
     "checkver": {
-        "url": "https://release.gitkraken.com/windows/RELEASES",
-        "regex": "gitkraken-([\\d.]+)-full\\.nupkg",
+        "url": "https://release.gitkraken.com/windows/RELEASES?id=gitkraken&localVersion=0&arch=amd64",
+        "re": "gitkraken-([\\d.]+)-full\\.nupkg",
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://release.gitkraken.com/windows/gitkraken-$version-full.nupkg"
+        "url": "https://release.gitkraken.com/windows/gitkraken-$version-full.nupkg",
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
     }
 }

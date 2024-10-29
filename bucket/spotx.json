@@ -9,7 +9,7 @@
         "script": "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; iex \"& { $((iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/SpotX/main/run.ps1').Content) } -v 1.2.13.661.ga588f749-4064 -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti\""
     },
     "checkver": {
-        "regex": "([\\w.-]+)",
+        "re": "([\\w.-]+)",
         "script": [
             "try {",
             "    $auth = Get-GitHubToken",

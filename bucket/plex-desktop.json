@@ -17,13 +17,13 @@
     ],
     "checkver": {
         "url": "https://plex.tv/pms/downloads/6.json",
-        "jsonpath": "$.computer.Windows.version"
+        "jp": "$.computer.Windows.version"
     },
     "autoupdate": {
         "url": "https://downloads.plex.tv/plex-desktop/$version/windows/Plex-$version-x86_64.exe#/dl.7z",
         "hash": {
             "url": "https://plex.tv/pms/downloads/6.json",
-            "jsonpath": "$.computer.Windows.releases[?(@.build == 'windows-x86_64')].checksum"
+            "jp": "$.computer.Windows.releases[?(@.build == 'windows-x86_64')].checksum"
         }
     }
 }

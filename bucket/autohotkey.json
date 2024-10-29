@@ -16,9 +16,12 @@
     },
     "checkver": {
         "url": "https://www.autohotkey.com/download/2.0/version.txt",
-        "regex": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
+        "re": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },
     "autoupdate": {
-        "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v$version/AutoHotkey_$version_setup.exe#/setup.exe"
+        "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v$version/AutoHotkey_$version_setup.exe#/setup.exe",
+        "hash": {
+            "url": "https://www.autohotkey.com/download/$majorVersion.$minorVersion/AutoHotkey_$version_setup.exe.sha256"
+        }
     }
 }

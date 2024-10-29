@@ -16,7 +16,7 @@
     ],
     "checkver": {
         "url": "https://sourceforge.net/projects/creaminstaller.mirror/rss?path=/",
-        "regex": "(?sm)/v(\\d+\\.\\d+(?:\\.\\d+){0,2})/CreamInstaller\\.zip"
+        "re": "(?sm)/v(\\d+\\.\\d+(?:\\.\\d+){0,2})/CreamInstaller\\.zip"
     },
     "autoupdate": {
         "url": "https://sourceforge.net/projects/creaminstaller.mirror/files/v$version/CreamInstaller.zip"

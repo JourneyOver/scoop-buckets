@@ -25,7 +25,7 @@
     ],
     "checkver": {
         "url": "https://www.realvnc.com/en/connect/download/viewer/",
-        "regex": "VNC-Viewer-([\\d.]+)-Windows"
+        "re": "VNC-Viewer-([\\d.]+)-Windows"
     },
     "autoupdate": {
         "architecture": {

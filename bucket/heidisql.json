@@ -6,11 +6,11 @@
     "architecture": {
         "32bit": {
             "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.8_32_Portable.zip",
-            "hash": "f04e75827d39cdefebac7e3f853a167ecf6012275632960c4be411adb53cd4b1"
+            "hash": "sha1:9ff6d1dffd64c367970557188387ec1b3e0ecfdd"
         },
         "64bit": {
             "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.8_64_Portable.zip",
-            "hash": "f45964d922d82ce904b4030d8f2479e8045ae7a18ee48670e45efe18797f97e0"
+            "hash": "sha1:1709abb8b9f16cdcc225f5f7745bc6cfb81671d9"
         }
     },
     "pre_install": "if (!(Test-Path \"$persist_dir\\portable_settings.txt\")) { New-Item \"$dir\\portable_settings.txt\" | Out-Null }",
@@ -24,9 +24,12 @@
     "persist": "portable_settings.txt",
     "checkver": {
         "url": "https://www.heidisql.com/download.php",
-        "regex": "Download HeidiSQL ([\\d.]+)"
+        "re": "Download HeidiSQL ([\\d.]+)"
     },
     "autoupdate": {
+        "hash": {
+            "url": "$url.sha1.txt"
+        },
         "architecture": {
             "32bit": {
                 "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_$version_32_Portable.zip"

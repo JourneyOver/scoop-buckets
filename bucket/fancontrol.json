@@ -23,7 +23,7 @@
     ],
     "checkver": {
         "url": "https://raw.githubusercontent.com/Rem0o/FanControl.Releases/master/version.json",
-        "jsonpath": "$.Number"
+        "jp": "$.Number"
     },
     "autoupdate": {
         "url": "https://raw.githubusercontent.com/Rem0o/FanControl.Releases/master/FanControl.zip"

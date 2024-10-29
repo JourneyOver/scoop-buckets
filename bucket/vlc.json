@@ -48,9 +48,12 @@
     ],
     "checkver": {
         "url": "https://www.videolan.org/vlc/download-windows.html",
-        "regex": "downloadVersion'>\\s*([\\d.]+)</span>"
+        "re": "downloadVersion'>\\s*([\\d.]+)</span>"
     },
     "autoupdate": {
+        "hash": {
+            "url": "$url.sha256"
+        },
         "architecture": {
             "32bit": {
                 "url": "https://mirror.aarnet.edu.au/pub/videolan/vlc/$version/win32/vlc-$version-win32.exe#/setup.exe"
