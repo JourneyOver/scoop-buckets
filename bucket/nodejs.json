@@ -18,7 +18,7 @@
     },
     "installer": {
         "script": [
-            "add_first_in_path \"$env:APPDATA\\npm\" $global",
+            "Add-Path \"$env:APPDATA\\npm\" $global",
             "& \"$dir\\npm.cmd\" config set prefix \"$env:APPDATA\\npm\""
         ]
     },
@@ -27,7 +27,7 @@
         "npm.cmd"
     ],
     "uninstaller": {
-        "script": "remove_from_path \"$env:APPDATA\\npm\" $global"
+        "script": "Remove-Path \"$env:APPDATA\\npm\" $global"
     },
     "checkver": {
         "url": "https://nodejs.org/dist/index.json",
