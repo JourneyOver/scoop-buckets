@@ -1,7 +1,7 @@
 // Configure PSScriptAnalyzer settings
 {
   "[powershell]": {
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true
   },
   "powershell.scriptAnalysis.settingsPath": "PSScriptAnalyzerSettings.psd1",
   "powershell.codeFormatting.preset": "OTBS",
@@ -11,55 +11,56 @@
   "powershell.codeFormatting.useCorrectCasing": true,
   "powershell.codeFormatting.whitespaceBetweenParameters": true,
   "json.schemas": [
-      {
-          "url": "https://raw.githubusercontent.com/scoopinstaller/scoop/master/schema.json",
-          "fileMatch": [
-              "bucket/*.json"
-          ]
-      }
+    {
+      "url": "https://raw.githubusercontent.com/scoopinstaller/scoop/master/schema.json",
+      "fileMatch": [
+        "bucket/*.json"
+      ]
+    }
   ],
   "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "**/tmp": true
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/tmp": true
   },
   "sortJSON.orderOverride": [
-      "##",
-      "version",
-      "description",
-      "homepage",
-      "license",
-      "notes",
-      "depends",
-      "suggest",
-      "identifier",
-      "url",
-      "hash",
-      "architecture",
-      "extract_dir",
-      "extract_to",
-      "pre_install",
-      "installer",
-      "post_install",
-      "env_add_path",
-      "env_set",
-      "bin",
-      "shortcuts",
-      "persist",
-      "uninstaller",
-      "innosetup",
-      "checkver",
-      "autoupdate"
+    "##",
+    "version",
+    "description",
+    "homepage",
+    "license",
+    "notes",
+    "depends",
+    "suggest",
+    "identifier",
+    "url",
+    "hash",
+    "architecture",
+    "extract_dir",
+    "extract_to",
+    "pre_install",
+    "installer",
+    "post_install",
+    "env_add_path",
+    "env_set",
+    "bin",
+    "shortcuts",
+    "persist",
+    "pre_uninstall",
+    "uninstaller",
+    "innosetup",
+    "checkver",
+    "autoupdate"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.sortJSON": "explicit"
-},
+  },
   "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "editor.formatOnSave": true,
   "html.format.enable": false
