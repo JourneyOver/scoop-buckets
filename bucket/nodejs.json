@@ -31,8 +31,8 @@
     },
     "checkver": {
         "url": "https://nodejs.org/dist/index.json",
-        "jsonpath": "$..[?(@.lts != false)].version",
-        "regex": "v([\\d\\.]+).*"
+        "jp": "$..[?(@.lts != false)].version",
+        "re": "v([\\d\\.]+).*"
     },
     "autoupdate": {
         "hash": {

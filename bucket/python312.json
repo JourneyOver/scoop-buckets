@@ -101,7 +101,7 @@
     },
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "regex": "python-(3\\.12\\.[\\d.]+)-"
+        "re": "python-(3\\.12\\.[\\d.]+)-"
     },
     "autoupdate": {
         "hash": {
