@@ -4,7 +4,7 @@
     "homepage": "https://github.com/tj/git-extras",
     "license": {
         "identifier": "MIT",
-        "url": "https://raw.githubusercontent.com/tj/git-extras/master/LICENSE"
+        "url": "https://github.com/tj/git-extras/blob/main/LICENSE"
     },
     "url": "https://github.com/tj/git-extras/archive/7.3.0.zip",
     "hash": "adbdd0019478216f0cbd10e93f9f44b10df6cd5d43e662c7bf0f1b3196ac8ec5",

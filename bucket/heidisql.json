@@ -2,7 +2,10 @@
     "version": "12.8",
     "description": "See and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL or PostgreSQL.",
     "homepage": "https://www.heidisql.com/",
-    "license": "GPL-2.0-only",
+    "license": {
+        "identifier": "GPL-2.0-only",
+        "url": "https://github.com/HeidiSQL/HeidiSQL/blob/master/LICENSE"
+    },
     "architecture": {
         "32bit": {
             "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.8_32_Portable.zip",
