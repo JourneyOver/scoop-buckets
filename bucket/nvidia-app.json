@@ -1,13 +1,13 @@
 {
-    "version": "11.0.1.147",
+    "version": "11.0.1.163",
     "description": "The NVIDIA app is the essential companion for PC gamers and creators. Keep your PC up to date with the latest NVIDIA drivers and technology.",
     "homepage": "https://www.nvidia.com/en-us/software/nvidia-app/",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.nvidia.com/en-us/about-nvidia/eula-agreement"
     },
-    "url": "https://us.download.nvidia.com/nvapp/client/11.0.1.147/NVIDIA_app_beta_v11.0.1.147.exe",
-    "hash": "de71aca61d84191c108e3b4ffd2e9da7fb214ee5963b83e5976017ef227e0e80",
+    "url": "https://us.download.nvidia.com/nvapp/client/11.0.1.163/NVIDIA_app_v11.0.1.163.exe",
+    "hash": "93545a9208c1d8d25ff407e43708d1204b059877164d9cf07b58fda66174794f",
     "installer": {
         "script": [
             "$args = @('-s')",
