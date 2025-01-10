@@ -1,0 +1,66 @@
+{
+    "version": "1.8.2",
+    "description": "Fork of Media Player Classic containing additional features and bug fixes.",
+    "homepage": "https://sourceforge.net/projects/mpcbe/",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/Aleksoid1978/MPC-BE/releases/download/1.8.2/MPC-BE.1.8.2.x86.7z",
+            "hash": "sha1:f1df34236f3e78f63572395401e9128a9599771d",
+            "extract_dir": "MPC-BE.1.8.2.x86",
+            "bin": "mpc-be.exe",
+            "shortcuts": [
+                [
+                    "mpc-be.exe",
+                    "MPC-BE"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://github.com/Aleksoid1978/MPC-BE/releases/download/1.8.2/MPC-BE.1.8.2.x64.7z",
+            "hash": "sha1:198a48efb5f05ab5b175f56cfca5a7f33263d117",
+            "extract_dir": "MPC-BE.1.8.2.x64",
+            "bin": [
+                "mpc-be64.exe",
+                [
+                    "mpc-be64.exe",
+                    "mpc-be"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "mpc-be64.exe",
+                    "MPC-BE"
+                ]
+            ]
+        }
+    },
+    "pre_install": [
+        "@('mpc-be64.ini', 'mpc-be.ini', 'Default.mpcpl') | ForEach-Object {",
+        "    if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null }",
+        "}"
+    ],
+    "persist": [
+        "mpc-be64.ini",
+        "mpc-be.ini",
+        "Default.mpcpl"
+    ],
+    "checkver": {
+        "github": "https://github.com/Aleksoid1978/MPC-BE"
+    },
+    "autoupdate": {
+        "hash": {
+            "url": "$baseurl/mpc-be.$version.checksums.sha"
+        },
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/Aleksoid1978/MPC-BE/releases/download/$version/MPC-BE.$version.x86.7z",
+                "extract_dir": "MPC-BE.$version.x86"
+            },
+            "64bit": {
+                "url": "https://github.com/Aleksoid1978/MPC-BE/releases/download/$version/MPC-BE.$version.x64.7z",
+                "extract_dir": "MPC-BE.$version.x64"
+            }
+        }
+    }
+}
