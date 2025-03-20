@@ -15,8 +15,11 @@
             "Remove-Item \"$dir\\$fname\""
         ]
     },
-    "checkver": "NVIDIA_app_v([\\d.]+)\\.exe",
+    "checkver": {
+        "re": "NVIDIA_app(?<beta>_beta)?_v(?<version>[\\d.]+)\\.exe",
+        "replace": "${version}"
+    },
     "autoupdate": {
-        "url": "https://us.download.nvidia.com/nvapp/client/$version/NVIDIA_app_v$version.exe"
+        "url": "https://us.download.nvidia.com/nvapp/client/$version/NVIDIA_app$matchBeta_v$version.exe"
     }
 }
