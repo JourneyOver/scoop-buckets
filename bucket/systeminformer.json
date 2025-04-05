@@ -1,13 +1,13 @@
 {
-    "version": "3.2.25093.1457",
+    "version": "3.2.25095.459",
     "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "homepage": "https://systeminformer.sourceforge.io",
     "license": {
         "identifier": "MIT",
         "url": "https://github.com/winsiderss/si-builds/blob/main/LICENSE"
     },
-    "url": "https://github.com/winsiderss/si-builds/releases/download/3.2.25093.1457/systeminformer-3.2.25093.1457-canary-bin.zip",
-    "hash": "c3c67a4b64042d4f64a160766cb2dcd61dd0120aacc37a0a9abeb95f8883e03e",
+    "url": "https://github.com/winsiderss/si-builds/releases/download/3.2.25095.459/systeminformer-3.2.25095.459-canary-bin.zip",
+    "hash": "619e5da86edc203d8183e8c9b4d165441dc94556ab5ec10dc224f2f9923a75a2",
     "architecture": {
         "32bit": {
             "extract_dir": "i386"
