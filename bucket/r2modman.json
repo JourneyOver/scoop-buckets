@@ -1,13 +1,13 @@
 {
-    "version": "3.2.4",
+    "version": "3.2.5",
     "description": "A simple, clean, and easy to use mod manager for Risk of Rain 2, Dyson Sphere Program, Valheim and GTFO",
     "homepage": "https://github.com/ebkr/r2modmanPlus",
     "license": {
         "identifier": "MIT",
         "url": "https://raw.githubusercontent.com/ebkr/r2modmanPlus/master/LICENSE"
     },
-    "url": "https://github.com/ebkr/r2modmanPlus/releases/download/v3.2.4/r2modman-3.2.4.exe#/r2modman.exe",
-    "hash": "579841e17dac881c3ecf340497616f6d37fffcf94e0148ef4c3fb9ad042a9fd4",
+    "url": "https://github.com/ebkr/r2modmanPlus/releases/download/v3.2.5/r2modman-3.2.5.exe#/r2modman.exe",
+    "hash": "e37a4c92190110199d43e13f3f384a5cd48cc26f23b935911b64e395559d2a0b",
     "bin": "r2modman.exe",
     "shortcuts": [
         [
