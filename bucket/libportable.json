@@ -1,5 +1,5 @@
 {
-    "version": "58575251",
+    "version": "20250930-58575251",
     "description": "Portable Runtime For Firefox.",
     "homepage": "https://github.com/adonais/libportable",
     "license": {
@@ -8,10 +8,15 @@
     },
     "url": "https://sourceforge.net/projects/libportable/files/Tools/portable_bin.7z",
     "hash": "sha1:08314156795ce7fc43172e32a5b632a92e4335fe",
-    "extract_dir": "portable_bin",
     "checkver": {
-        "url": "https://sourceforge.net/projects/libportable/rss?path=/Tools",
-        "re": "(?sm)portable_bin.7z.*?(\\d+)</files:sf-file-id>"
+        "script": [
+            "try { $detail = Invoke-WebRequest 'https://sourceforge.net/projects/libportable/rss?path=/Tools' -MaximumRedirection 0 -ErrorAction Ignore } catch { $_.Exception.Response }",
+            "$rss = [xml]$detail.Content",
+            "$latest = $rss.rss.channel.item | Where-Object { $_.link -match '/portable_bin.7z/' } | Select-Object -First 1",
+            "$result = ([DateTime]($latest.pubDate -replace 'UTC?$', '-00:00')).ToUniversalTime().ToString('yyyyMMdd') + '-' + $latest.'sf-file-id'.'#text'",
+            "return $result"
+        ],
+        "regex": "(\\d+-\\d+)"
     },
     "autoupdate": {
         "url": "https://sourceforge.net/projects/libportable/files/Tools/portable_bin.7z"
