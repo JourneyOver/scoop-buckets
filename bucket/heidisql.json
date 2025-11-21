@@ -1,5 +1,5 @@
 {
-    "version": "12.11",
+    "version": "12.13",
     "description": "See and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL or PostgreSQL.",
     "homepage": "https://www.heidisql.com/",
     "license": {
@@ -7,13 +7,9 @@
         "url": "https://github.com/HeidiSQL/HeidiSQL/blob/master/LICENSE"
     },
     "architecture": {
-        "32bit": {
-            "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.11_32_Portable.zip",
-            "hash": "8fc91d2fc84b56444335d09f4ceda7b130538c2421af285227d472abe2c6a1e5"
-        },
         "64bit": {
-            "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.11_64_Portable.zip",
-            "hash": "edb199a2501726b87b3908f83c3e33cc1057c483c78b091dea1ed9a8d535131d"
+            "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.13_64_Portable.zip",
+            "hash": "146701d626a9c3909f07d913d5c5e0330894c8c9a3ff32ca9f05985daeb2f646"
         }
     },
     "pre_install": "if (!(Test-Path \"$persist_dir\\portable_settings.txt\")) { New-Item \"$dir\\portable_settings.txt\" | Out-Null }",
@@ -30,13 +26,7 @@
         "re": "Download HeidiSQL ([\\d.]+)"
     },
     "autoupdate": {
-        "hash": {
-            "url": "$url.sha1.txt"
-        },
         "architecture": {
-            "32bit": {
-                "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_$version_32_Portable.zip"
-            },
             "64bit": {
                 "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_$version_64_Portable.zip"
             }

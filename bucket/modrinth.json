@@ -23,7 +23,9 @@
             "."
         ]
     ],
-    "checkver": "href=\"[^\"]+/versions/([\\d.]+)/windows/Modrinth%20App",
+    "checkver": {
+        "github": "https://github.com/modrinth/code"
+    },
     "autoupdate": {
         "url": "https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64-setup.exe#/dl.7z"
     }

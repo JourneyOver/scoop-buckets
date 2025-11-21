@@ -5,11 +5,6 @@
     "license": "MIT",
     "notes": "npm global prefix set to: $env:APPDATA\\npm",
     "architecture": {
-        "32bit": {
-            "url": "https://nodejs.org/dist/v22.21.0/node-v22.21.0-win-x86.7z",
-            "hash": "d2767e24741f915477002d6325dda40f7554ce9e5176c8d2e824dc127d273725",
-            "extract_dir": "node-v22.21.0-win-x86"
-        },
         "64bit": {
             "url": "https://nodejs.org/dist/v22.21.0/node-v22.21.0-win-x64.7z",
             "hash": "31a82a950fd2524651f0409307afe3276ae68a13a131e8b72945a3931109c8c3",
@@ -39,10 +34,6 @@
             "url": "$baseurl/SHASUMS256.txt.asc"
         },
         "architecture": {
-            "32bit": {
-                "url": "https://nodejs.org/dist/v$version/node-v$version-win-x86.7z",
-                "extract_dir": "node-v$version-win-x86"
-            },
             "64bit": {
                 "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
                 "extract_dir": "node-v$version-win-x64"
