@@ -6,7 +6,10 @@
         "identifier": "GPL-2.0-only",
         "url": "https://raw.githubusercontent.com/qbittorrent/qBittorrent/master/COPYING"
     },
-    "notes": "Web UI Theme https://github.com/WDaan/VueTorrent",
+    "notes": [
+        "For file associations, run:",
+        "reg import \"$dir\\install-associations.reg\""
+    ],
     "architecture": {
         "64bit": {
             "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-5.1.4/qbittorrent_5.1.4_x64_setup.exe#/dl.7z",
@@ -14,7 +17,7 @@
         }
     },
     "pre_install": [
-        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst.exe\" -Force -Recurse",
+        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst.exe\" -Force -Recurse -ErrorAction SilentlyContinue",
         "if ((!(Test-Path \"$persist_dir\\profile\")) -and ((Test-Path \"$persist_dir\\..\\qbittorrent-portable\\profile\") -or (Test-Path \"$env:APPDATA\\qBittorrent\"))) {",
         "    Write-Host \"Scoop is migrating qbittorrent to use portable mode by default.\" -ForegroundColor Yellow",
         "    Write-Host \"For details, see: https://github.com/ScoopInstaller/Extras/issues/5845\" -ForegroundColor Yellow",
@@ -34,9 +37,19 @@
         "        Copy-Item \"$persist_dir\\..\\qbittorrent-portable\\profile\\qBittorrent\\config\" \"$persist_dir\\profile\\qBittorrent\\config\" -Recurse | Out-Null",
         "        Copy-Item \"$persist_dir\\..\\qbittorrent-portable\\profile\\qBittorrent\\data\" \"$persist_dir\\profile\\qBittorrent\\data\" -Recurse | Out-Null",
         "    }",
-        "}",
-        "Stop-Process -Name 'qbittorrent' -Force -ErrorAction 'SilentlyContinue'; Start-Sleep -Seconds 2"
+        "}"
     ],
+    "post_install": [
+        "'install-associations', 'uninstall-associations' | ForEach-Object {",
+        "    if (Test-Path \"$bucketsdir\\$bucket\\scripts\\qbittorrent\\$_.reg\") {",
+        "        $qbitPath = \"$dir\".Replace('\\', '\\\\')",
+        "        $content = (Get-Content \"$bucketsdir\\$bucket\\scripts\\qbittorrent\\$_.reg\").Replace('$qbit', $qbitPath)",
+        "        if ($global) { $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE') }",
+        "        Set-Content \"$dir\\$_.reg\" $content -Encoding Ascii -Force",
+        "    }",
+        "}"
+    ],
+    "bin": "qbittorrent.exe",
     "shortcuts": [
         [
             "qbittorrent.exe",
@@ -44,7 +57,11 @@
         ]
     ],
     "persist": "profile",
+    "uninstaller": {
+        "script": "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-associations.reg\" }"
+    },
     "checkver": {
+        "re": "qbittorrent_([\\d.]+)_x64_setup\\.exe",
         "sourceforge": "qbittorrent/qbittorrent-win32"
     },
     "autoupdate": {

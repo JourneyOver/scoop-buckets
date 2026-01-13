@@ -22,8 +22,8 @@
     ],
     "persist": "Settings\\Settings.xml",
     "checkver": {
-        "url": "https://www.guru3d.com/download/display-driver-uninstaller-download/",
-        "re": "<title>Display Driver Uninstaller \\(DDU\\) download version ([\\d.]+)</title>"
+        "url": "https://www.wagnardsoft.com/display-driver-uninstaller-ddu",
+        "re": "Display Driver Uninstaller \\(DDU\\) (\\d+(?:\\.\\d+){3})"
     },
     "autoupdate": {
         "url": "https://ftp.nluug.nl/pub/games/PC/guru3d/ddu/%5BGuru3D%5D-DDU.zip"

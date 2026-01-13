@@ -20,6 +20,6 @@
         "re": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },
     "autoupdate": {
-        "url": "https://github.com/blish-hud/Blish-HUD/releases/download/v$version/Blish.HUD.$version.zip"
+        "url": "https://github.com/blish-hud/Blish-HUD/releases/download/v$version/Blish.HUD.zip"
     }
 }
