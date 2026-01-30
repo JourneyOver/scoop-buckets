@@ -4,9 +4,9 @@
     "homepage": "https://cs.rin.ru/forum/viewtopic.php?f=10&t=112021",
     "license": {
         "identifier": "BSD-Zero-Clause",
-        "url": "https://github.com/acidicoala/Koalageddon/blob/master/LICENSE.txt"
+        "url": "https://github.com/KA4I/Koalageddon/blob/master/LICENSE.txt"
     },
-    "url": "https://github.com/acidicoala/Koalageddon/releases/download/v1.5.4/KoalageddonInstaller.exe",
+    "url": "https://github.com/KA4I/Koalageddon/releases/download/v1.5.4/KoalageddonInstaller.exe",
     "hash": "6e027b8d745ea9ef349493f65d12347d090b2a6ae7b0162b4f8c9c801a82b7f9",
     "shortcuts": [
         [
@@ -16,9 +16,9 @@
     ],
     "innosetup": true,
     "checkver": {
-        "github": "https://github.com/acidicoala/Koalageddon"
+        "github": "https://github.com/KA4I/Koalageddon"
     },
     "autoupdate": {
-        "url": "https://github.com/acidicoala/Koalageddon/releases/download/v$version/KoalageddonInstaller.exe"
+        "url": "https://github.com/KA4I/Koalageddon/releases/download/$version/KoalageddonInstaller.exe"
     }
 }
