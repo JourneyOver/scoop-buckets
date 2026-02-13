@@ -1,5 +1,5 @@
 {
-    "version": "258",
+    "version": "259",
     "description": "A highly customizable fan controlling software for the Windows OS.",
     "homepage": "https://getfancontrol.com/",
     "license": {
@@ -8,7 +8,7 @@
     },
     "notes": "You will need to force close fancontrol before running this, I have tried multiple methods to force close it through the installer but it doesn't work. I will try to fix this in the future.",
     "url": "https://raw.githubusercontent.com/Rem0o/FanControl.Releases/master/FanControl.zip",
-    "hash": "9d5489d318974c94b2e4e4d265a8efc75bf258e18c58d2a8c30f86f038f938b8",
+    "hash": "aa769f36941cc62889fdbf3115f5ece530d423e206c6d76d4d9b0b3f1f6f05f4",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\Configurations\")) {",
         "   New-Item \"$persist_dir\\Configurations\" -ItemType Directory -Force | Out-Null",
