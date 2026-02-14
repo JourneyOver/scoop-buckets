@@ -8,13 +8,18 @@
     },
     "url": "https://github.com/tj/git-extras/archive/7.4.0.zip",
     "hash": "10a2be679152a33e2ee6ec5dd5f412ef4286be12e362fb3a3bfa89bb26f8cd59",
-    "extract_dir": "git-extras-7.4.0",
+    "pre_install": [
+        "$source = \"$dir\\git-extras-$version\"",
+        "Get-ChildItem -LiteralPath $source -Force | ForEach-Object {",
+        "    Move-Item -LiteralPath $_.FullName -Destination $dir -Force",
+        "}",
+        "Remove-Item -LiteralPath $source -Recurse -Force"
+    ],
     "post_install": "& \"$dir\\install.cmd\"",
     "checkver": {
         "github": "https://github.com/tj/git-extras"
     },
     "autoupdate": {
-        "url": "https://github.com/tj/git-extras/archive/$version.zip",
-        "extract_dir": "git-extras-$version"
+        "url": "https://github.com/tj/git-extras/archive/$version.zip"
     }
 }

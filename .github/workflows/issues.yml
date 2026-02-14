@@ -2,12 +2,24 @@ on:
   issues:
     types: [opened, labeled]
 name: Issues
+
+concurrency:
+  group: issues-handler-${{ github.repository }}
+  cancel-in-progress: false
+
 jobs:
   issueHandler:
     name: IssueHandler
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+
+      - name: Rebase on latest main
+        shell: pwsh
+        run: git pull --rebase origin main
+
       - name: IssueHandler
         uses: ScoopInstaller/GithubActions@main
         if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))

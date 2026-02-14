@@ -60,10 +60,6 @@
             "}"
         ]
     },
-    "post_install": [
-        "python -E -s -m ensurepip -U --default-pip | Out-Null",
-        "Write-Output \"$([char]0x1b)[0m\" # Reset ansi to prevent color leak from installer"
-    ],
     "env_add_path": [
         "Scripts",
         "."
