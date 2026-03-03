@@ -1,13 +1,13 @@
 {
-    "version": "0.11.0",
+    "version": "0.11.1",
     "description": "The Modrinth App is a unique, open source launcher that allows you to play your favorite Minecraft mods, and keep them up to date, all in one neat little package.",
     "homepage": "https://modrinth.com/app",
     "license": {
         "identifier": "GPL-3.0-or-later",
         "url": "https://github.com/modrinth/code/blob/main/apps/app/LICENSE"
     },
-    "url": "https://launcher-files.modrinth.com/versions/0.11.0/windows/Modrinth%20App_0.11.0_x64-setup.exe#/dl.7z",
-    "hash": "9a09f6c3e1354649ea6532bf0004845c9db81634afd26b5482d35ddabf8f6bb2",
+    "url": "https://launcher-files.modrinth.com/versions/0.11.1/windows/Modrinth%20App_0.11.1_x64-setup.exe#/dl.7z",
+    "hash": "ff50d885fd90698071e19dd2a82347dd0fd660bb2dd92e23e36240dbd459fb29",
     "env_set": {
         "THESEUS_CONFIG_DIR": "$dir\\data"
     },
