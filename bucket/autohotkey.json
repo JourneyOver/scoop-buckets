@@ -1,13 +1,13 @@
 {
-    "version": "2.0.22",
+    "version": "2.0.23",
     "description": "AutoHotKey(AHK) —— The ultimate automation scripting language for Windows.",
     "homepage": "https://www.autohotkey.com/",
     "license": {
         "identifier": "GPL-2.0-only",
         "url": "https://github.com/AutoHotkey/AutoHotkey/blob/alpha/license.txt"
     },
-    "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v2.0.22/AutoHotkey_2.0.22_setup.exe",
-    "hash": "5613e65158ab8a8a90d5986b18894080af367dc36347b366ee3aeb0dbcd6db86",
+    "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v2.0.23/AutoHotkey_2.0.23_setup.exe",
+    "hash": "d7038e9ba08e9c63edcdb2e63552b434b87491b449d7082cf28a40cd4ece91af",
     "installer": {
         "script": [
             "$args = @('/silent')",
