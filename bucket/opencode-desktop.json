@@ -1,0 +1,42 @@
+{
+    "version": "1.14.19",
+    "description": "The open source AI coding agent.",
+    "homepage": "https://opencode.ai/",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/anomalyco/opencode/releases/download/v1.14.19/opencode-desktop-windows-x64.exe#/dl.7z",
+            "hash": "828b02f8ff87233b5cf165108b3f98d432040abf9417dc7a221dc4cbc9ef0d6c"
+        },
+        "arm64": {
+            "url": "https://github.com/anomalyco/opencode/releases/download/v1.14.19/opencode-desktop-windows-arm64.exe#/dl.7z",
+            "hash": "89bd2a22cf99e9c9ca51788f1d671b64d1f1c222a71bb041e08421ae7a3e4775"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction Ignore",
+    "bin": [
+        [
+            "opencode-cli.exe",
+            "opencode"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "OpenCode.exe",
+            "OpenCode"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/anomalyco/opencode"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/anomalyco/opencode/releases/download/v$version/opencode-desktop-windows-x64.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/anomalyco/opencode/releases/download/v$version/opencode-desktop-windows-arm64.exe#/dl.7z"
+            }
+        }
+    }
+}
