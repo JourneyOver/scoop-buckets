@@ -1,5 +1,5 @@
 {
-    "version": "12.16",
+    "version": "12.17",
     "description": "See and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL or PostgreSQL.",
     "homepage": "https://www.heidisql.com/",
     "license": {
