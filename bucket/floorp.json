@@ -1,5 +1,5 @@
 {
-    "version": "12.12.2",
+    "version": "12.13.0",
     "description": "(libportable patched) A new privacy-preserving Firefox-based browser developed by a community of students in Japan.",
     "homepage": "https://floorp.app/en/",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://github.com/Floorp-Projects/Floorp/blob/ESR128/LICENSE"
     },
     "depends": "journey/libportable",
-    "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v12.12.2/floorp-windows-x86_64.installer.exe#/dl.7z",
-    "hash": "fc804c1d64b18c031201a3b25346a027b4fbd509baa0f4cd6139055ff234d942",
+    "url": "https://github.com/Floorp-Projects/Floorp/releases/download/v12.13.0/floorp-windows-x86_64.installer.exe#/dl.7z",
+    "hash": "f9c54c19ca29a3f2902549fd0246f2fabba5680f7b425b143f3aa037ed2b6b74",
     "pre_install": [
         "if ($env:CI -eq \"true\") { return }",
         "Remove-Item \"$dir\\setup.exe\", \"$dir\\core\\updater.*\" -Force",
