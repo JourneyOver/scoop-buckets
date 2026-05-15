@@ -23,7 +23,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/NeuralNomadsAI/CodeNomad/releases/download/v$version/CodeNomad-$version-win-x64.zip"
+                "url": "https://github.com/NeuralNomadsAI/CodeNomad/releases/download/v$version/CodeNomad-Electron-windows-x64-$version.zip"
             }
         }
     }
