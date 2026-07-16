@@ -1,13 +1,13 @@
 {
-    "version": "2026.2.3",
+    "version": "2026.2.5",
     "description": "UniGetUI: The Graphical Interface for your package managers. Could be terribly described as a package manager manager to manage your package managers",
     "homepage": "https://www.marticliment.com/unigetui/",
     "license": {
         "identifier": "MIT",
         "url": "https://raw.githubusercontent.com/Devolutions/UniGetUI/main/LICENSE"
     },
-    "url": "https://github.com/Devolutions/UniGetUI/releases/download/v2026.2.3/UniGetUI.Installer.exe",
-    "hash": "d82581e538c96fb0d1aab3a3c36bd3b44d10c1df1357ebd4f18f37454b748dee",
+    "url": "https://github.com/Devolutions/UniGetUI/releases/download/v2026.2.5/UniGetUI.Installer.exe",
+    "hash": "64ec362384936768988bb05eb5628d3ef734145116c8123b863c8df53d011eee",
     "pre_install": [
         "$filePath = Join-Path $dir 'ForceUniGetUIPortable'",
         "if (-not (Test-Path -Path $filePath -PathType Leaf)) {",
