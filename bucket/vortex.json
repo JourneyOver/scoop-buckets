@@ -1,13 +1,13 @@
 {
-    "version": "2.4.0-beta.2",
+    "version": "2.4.0",
     "description": "Open-source mod manager from Nexus Mods",
     "homepage": "https://www.nexusmods.com/about/vortex/",
     "license": {
         "identifier": "GPL-3.0-or-later",
         "url": "https://raw.githubusercontent.com/Nexus-Mods/Vortex/master/LICENSE.md"
     },
-    "url": "https://github.com/Nexus-Mods/Vortex/releases/download/v2.4.0-beta.2/vortex-setup-2.4.0-beta.2.exe",
-    "hash": "sha512:d161cf2c51af79ccb075b18bf020de196eed139774705f3a3539f0a44f50a5ca75a15966c1cea789c05f0d052a87fc1fd28c4cd3642b6a4b6f39c3f5eb3e7989",
+    "url": "https://github.com/Nexus-Mods/Vortex/releases/download/v2.4.0/vortex-setup-2.4.0.exe",
+    "hash": "sha512:f277722be6349ca3c2929b69be70938ff7dd4355646ceef607d7914d5c6d3d32f52d445be42447225b94f3097452bd8c4edd9f5794abd9c057d5c4a89aab0d82",
     "installer": {
         "script": [
             "$args = @('/S')",
