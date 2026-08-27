@@ -1,13 +1,13 @@
 {
-    "version": "3.35.1",
+    "version": "3.36",
     "description": "Powerful and easy-to-use tool to edit metadata of audio files.",
     "homepage": "https://www.mp3tag.de/en/index.html",
     "license": {
         "identifier": "Freeware",
         "url": "http://help.mp3tag.de/misc_license.html"
     },
-    "url": "https://download.mp3tag.de/mp3tagv3351-x64-setup.exe#/dl.7z",
-    "hash": "7d6b2ed6bb77688303e74e905f6bed19999e466b0ced60b6505fb4ed724545d0",
+    "url": "https://download.mp3tag.de/mp3tagv336-x64-setup.exe#/dl.7z",
+    "hash": "4954bc6fa8b0ff9448e9352bb64fbf3481b4fcc6d9a12d127a4d8d5721ca6d64",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\mp3tag.cfg\")) { New-Item \"$dir\\mp3tag.cfg\" | Out-Null }",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Mp3tagUninst*\" -Recurse"
