@@ -6,12 +6,8 @@
         "identifier": "GPL-2.0-only",
         "url": "https://github.com/HeidiSQL/HeidiSQL/blob/master/LICENSE"
     },
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/v12.21/HeidiSQL_12.21_64_Portable.zip",
-            "hash": "fecb76a69e29a53ea05b1d57fc2f7b7aaed5b8f889556c6eca545e2a800df1ab"
-        }
-    },
+    "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/v12.21/HeidiSQL_12.21_64_Portable.zip",
+    "hash": "fecb76a69e29a53ea05b1d57fc2f7b7aaed5b8f889556c6eca545e2a800df1ab",
     "pre_install": "if (!(Test-Path \"$persist_dir\\portable_settings.txt\")) { New-Item \"$dir\\portable_settings.txt\" | Out-Null }",
     "bin": "heidisql.exe",
     "shortcuts": [
@@ -23,13 +19,9 @@
     "persist": "portable_settings.txt",
     "checkver": {
         "github": "https://github.com/HeidiSQL/HeidiSQL",
-        "regex": "tag/v([\\d.]+)"
+        "regex": "^(?i)(?<tag>v?([\\d.]+))$"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/v$version/HeidiSQL_$version_64_Portable.zip"
-            }
-        }
+        "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/v$version/HeidiSQL_$version_64_Portable.zip"
     }
 }
