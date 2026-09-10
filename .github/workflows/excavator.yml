@@ -1,17 +1,94 @@
+name: Excavator
+run-name: Excavate (${{ github.ref_name }})
+
 on:
   workflow_dispatch:
   schedule:
     # run every 3 hours
     - cron: "0 */3 * * *"
-name: Excavator
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
   excavate:
     name: Excavate
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
+
+      - name: Checkout bucket
+        uses: actions/checkout@main
+
+      - name: Install Cloudflare WARP
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $warpCli = "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe"
+          Write-Host "installing Cloudflare WARP..."
+          # rolling 'latest' URL has no stable hash; TLS-only trust
+          Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
+          Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Start-Sleep -Seconds 5
+          . $warpCli registration delete 2>$null
+          . $warpCli --accept-tos registration new
+          @("github.com",
+            "api.github.com",
+            "*.actions.githubusercontent.com",
+            "codeload.github.com",
+            "ghcr.io",
+            "results-receiver.actions.githubusercontent.com",
+            "*.blob.core.windows.net",
+            "objects.githubusercontent.com",
+            "objects-origin.githubusercontent.com",
+            "github-releases.githubusercontent.com",
+            "github-registry-files.githubusercontent.com",
+            "*.pkg.github.com",
+            "github-cloud.githubusercontent.com",
+            "github-cloud.s3.amazonaws.com"
+           ) | ForEach-Object { . $warpCli --accept-tos tunnel host add "$_" }
+          . $warpCli --accept-tos connect
+          # Add a loop to wait for the status to be connected
+          $connected = $false
+          for ($attemptCount = 0; $attemptCount -lt 10; $attemptCount++) {
+              $output = . $warpCli --accept-tos status
+              Write-Host $output
+              if ($output -like "*Status update: Connected*") {
+                  $connected = $true
+                  break
+              }
+              Start-Sleep -Seconds 5  # Wait for 5 seconds before checking again
+          }
+          if (-not $connected) {
+              Write-Host "Failed to connect after 10 attempts."
+              exit 1  # Exit with an error code
+          }
+
       - name: Excavate
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SKIP_UPDATED: 1
+
+      - name: Disconnect Cloudflare WARP
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe") {
+              try {
+                  . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" --accept-tos disconnect
+              }
+              catch {
+                  Write-Warning "Failed to disconnect Cloudflare WARP"
+              }
+          }
+
+      - name: Summary
+        if: always()
+        shell: pwsh
+        run: |
+          "Excavation triggered via ${{ github.event_name }}" >> $env:GITHUB_STEP_SUMMARY
+          "Schedule: every 3 hours | Skip updated: 1" >> $env:GITHUB_STEP_SUMMARY
+          "Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY

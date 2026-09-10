@@ -1,4 +1,5 @@
 name: Tests
+run-name: Tests (${{ github.ref_name }} @ ${{ github.sha }})
 
 on:
   push:
@@ -8,52 +9,88 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test_powershell:
-    name: WindowsPowerShell
+    name: Windows PowerShell 5.1
     runs-on: windows-latest
     steps:
+
       - name: Checkout Bucket
         uses: actions/checkout@main
         with:
           fetch-depth: 2
           path: my_bucket
+
       - name: Checkout Scoop
         uses: actions/checkout@main
         with:
           repository: ScoopInstaller/Scoop
           path: scoop_core
+
       - name: Init Test Suite
         uses: potatoqualitee/psmodulecache@main
         with:
           modules-to-cache: BuildHelpers
           shell: powershell
+
       - name: Test Bucket
         shell: powershell
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
           .\my_bucket\bin\test.ps1
+
+      - name: Summarize Failure
+        if: failure()
+        shell: powershell
+        run: |
+          "## ${{ job.name }} failed" >> $env:GITHUB_STEP_SUMMARY
+          "" >> $env:GITHUB_STEP_SUMMARY
+          "- Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
+          "- Runner: ${{ runner.os }}" >> $env:GITHUB_STEP_SUMMARY
+          "- Rerun: push an empty commit or re-run failed jobs" >> $env:GITHUB_STEP_SUMMARY
+
   test_pwsh:
-    name: PowerShell
+    name: PowerShell 7+
     runs-on: windows-latest
     steps:
+
       - name: Checkout Bucket
         uses: actions/checkout@main
         with:
           fetch-depth: 2
           path: my_bucket
+
       - name: Checkout Scoop
         uses: actions/checkout@main
         with:
           repository: ScoopInstaller/Scoop
           path: scoop_core
+
       - name: Init Test Suite
         uses: potatoqualitee/psmodulecache@main
         with:
           modules-to-cache: BuildHelpers
           shell: pwsh
+
       - name: Test Bucket
         shell: pwsh
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
           .\my_bucket\bin\test.ps1
+
+      - name: Summarize Failure
+        if: failure()
+        shell: pwsh
+        run: |
+          "## ${{ job.name }} failed" >> $env:GITHUB_STEP_SUMMARY
+          "" >> $env:GITHUB_STEP_SUMMARY
+          "- Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
+          "- Runner: ${{ runner.os }}" >> $env:GITHUB_STEP_SUMMARY
+          "- Rerun: push an empty commit or re-run failed jobs" >> $env:GITHUB_STEP_SUMMARY

@@ -23,12 +23,12 @@
     "persist": "portable_settings.txt",
     "checkver": {
         "github": "https://github.com/HeidiSQL/HeidiSQL",
-        "regex": "tag/([\\d.]+)"
+        "regex": "tag/v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/$version/HeidiSQL_$version_64_Portable.zip"
+                "url": "https://github.com/HeidiSQL/HeidiSQL/releases/download/v$version/HeidiSQL_$version_64_Portable.zip"
             }
         }
     }

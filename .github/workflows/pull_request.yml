@@ -1,14 +1,34 @@
+name: Pull Requests
+run-name: Handle PR #${{ github.event.pull_request.number }}
+
 on:
   pull_request:
-    types: [opened]
-name: Pull Requests
+    types:
+      - opened
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
   pullRequestHandler:
-    name: PullRequestHandler
+    name: Handle PR
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
+
+      - name: Checkout bucket
+        uses: actions/checkout@main
+
       - name: PullRequestHandler
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: always()
+        shell: pwsh
+        run: |
+          "PR #${{ github.event.pull_request.number }} via ${{ github.event_name }}" >> $env:GITHUB_STEP_SUMMARY
+          "Opened by @${{ github.actor }}" >> $env:GITHUB_STEP_SUMMARY
+          "Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY

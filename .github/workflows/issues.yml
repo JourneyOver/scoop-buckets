@@ -1,7 +1,16 @@
+name: Issues
+run-name: Handle issue #${{ github.event.issue.number }}
+
 on:
   issues:
-    types: [opened, labeled]
-name: Issues
+    types:
+      - opened
+      - labeled
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
 
 concurrency:
   group: issues-handler-${{ github.repository }}
@@ -9,10 +18,12 @@ concurrency:
 
 jobs:
   issueHandler:
-    name: IssueHandler
+    name: Handle issue
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
+
+      - name: Checkout bucket
+        uses: actions/checkout@main
         with:
           fetch-depth: 0
 
@@ -25,3 +36,11 @@ jobs:
         if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: always()
+        shell: pwsh
+        run: |
+          "Issue #${{ github.event.issue.number }} via `${{ github.event.action }}`" >> $env:GITHUB_STEP_SUMMARY
+          "Opened by @${{ github.actor }}" >> $env:GITHUB_STEP_SUMMARY
+          "Handler runs on opened / labeled(verify)" >> $env:GITHUB_STEP_SUMMARY
