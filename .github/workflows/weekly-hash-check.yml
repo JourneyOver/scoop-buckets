@@ -21,10 +21,10 @@ jobs:
     steps:
 
       - name: Checkout Bucket
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
 
       - name: Checkout Scoop
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
         with:
           repository: ScoopInstaller/Scoop
           path: scoop_core
@@ -109,6 +109,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: checkhashes-log
           path: ${{ github.workspace }}/checkhashes.log
+          archive: false
           if-no-files-found: ignore

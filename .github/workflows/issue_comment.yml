@@ -18,10 +18,10 @@ jobs:
     steps:
 
       - name: Checkout bucket
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
 
       - name: PullRequestHandler
-        uses: ScoopInstaller/GithubActions@main
+        uses: ScoopInstaller/GithubActions@v3.0.0
         if: startsWith(github.event.comment.body, '/verify')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

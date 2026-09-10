@@ -19,7 +19,7 @@ jobs:
     steps:
 
       - name: Checkout bucket
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
 
       - name: Install Cloudflare WARP
         shell: pwsh
@@ -67,7 +67,7 @@ jobs:
           }
 
       - name: Excavate
-        uses: ScoopInstaller/GithubActions@main
+        uses: ScoopInstaller/GithubActions@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SCOOP_BRANCH: develop

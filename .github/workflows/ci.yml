@@ -23,19 +23,19 @@ jobs:
     steps:
 
       - name: Checkout Bucket
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
         with:
           fetch-depth: 2
           path: my_bucket
 
       - name: Checkout Scoop
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
         with:
           repository: ScoopInstaller/Scoop
           path: scoop_core
 
       - name: Init Test Suite
-        uses: potatoqualitee/psmodulecache@main
+        uses: potatoqualitee/psmodulecache@v6.3
         with:
           modules-to-cache: BuildHelpers
           shell: powershell
@@ -52,19 +52,19 @@ jobs:
     steps:
 
       - name: Checkout Bucket
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
         with:
           fetch-depth: 2
           path: my_bucket
 
       - name: Checkout Scoop
-        uses: actions/checkout@main
+        uses: actions/checkout@v7
         with:
           repository: ScoopInstaller/Scoop
           path: scoop_core
 
       - name: Init Test Suite
-        uses: potatoqualitee/psmodulecache@main
+        uses: potatoqualitee/psmodulecache@v6.3
         with:
           modules-to-cache: BuildHelpers
           shell: pwsh
