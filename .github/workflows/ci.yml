@@ -46,16 +46,6 @@ jobs:
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
           .\my_bucket\bin\test.ps1
 
-      - name: Summarize Failure
-        if: failure()
-        shell: powershell
-        run: |
-          "## ${{ job.name }} failed" >> $env:GITHUB_STEP_SUMMARY
-          "" >> $env:GITHUB_STEP_SUMMARY
-          "- Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
-          "- Runner: ${{ runner.os }}" >> $env:GITHUB_STEP_SUMMARY
-          "- Rerun: push an empty commit or re-run failed jobs" >> $env:GITHUB_STEP_SUMMARY
-
   test_pwsh:
     name: PowerShell 7+
     runs-on: windows-latest
@@ -84,13 +74,3 @@ jobs:
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
           .\my_bucket\bin\test.ps1
-
-      - name: Summarize Failure
-        if: failure()
-        shell: pwsh
-        run: |
-          "## ${{ job.name }} failed" >> $env:GITHUB_STEP_SUMMARY
-          "" >> $env:GITHUB_STEP_SUMMARY
-          "- Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
-          "- Runner: ${{ runner.os }}" >> $env:GITHUB_STEP_SUMMARY
-          "- Rerun: push an empty commit or re-run failed jobs" >> $env:GITHUB_STEP_SUMMARY

@@ -24,11 +24,4 @@ jobs:
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Summary
-        if: always()
-        shell: pwsh
-        run: |
-          "PR #${{ github.event.pull_request.number }} via ${{ github.event_name }}" >> $env:GITHUB_STEP_SUMMARY
-          "Opened by @${{ github.actor }}" >> $env:GITHUB_STEP_SUMMARY
-          "Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
+          SCOOP_BRANCH: develop

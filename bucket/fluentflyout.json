@@ -44,11 +44,8 @@
         "}"
     ],
     "checkver": {
-        "regex": "https://files.fluentflyout.com/FluentFlyout_([\\d.]+)_x64_Installer.zip",
-        "script": [
-            ". \"$pwd\\bin\\utils.ps1\"",
-            "\"https://fluentflyout.com/files/latest/x64\" | Get-RedirectedUrl1st"
-        ]
+        "github": "https://github.com/unchihugo/FluentFlyout",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

@@ -261,9 +261,15 @@ function Get-RedirectedUrl1st {
             $Headers.GetEnumerator() | ForEach-Object -Process { $Request.Headers.Set($_.Key, $_.Value) }
         }
         $Request.AllowAutoRedirect = $false
-        $Response = $Request.GetResponse()
-        Write-Output -InputObject $Response.GetResponseHeader('Location')
-        $Response.Close()
+        $Response = $null
+        try {
+            $Response = $Request.GetResponse()
+            Write-Output -InputObject $Response.GetResponseHeader('Location')
+        } catch {
+            throw "Failed to get redirect for '$Uri': $($_.Exception.Message)"
+        } finally {
+            if ($null -ne $Response) { $Response.Close() }
+        }
     }
 }
 

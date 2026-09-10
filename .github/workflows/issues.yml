@@ -36,11 +36,4 @@ jobs:
         if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Summary
-        if: always()
-        shell: pwsh
-        run: |
-          "Issue #${{ github.event.issue.number }} via `${{ github.event.action }}`" >> $env:GITHUB_STEP_SUMMARY
-          "Opened by @${{ github.actor }}" >> $env:GITHUB_STEP_SUMMARY
-          "Handler runs on opened / labeled(verify)" >> $env:GITHUB_STEP_SUMMARY
+          SCOOP_BRANCH: develop

@@ -29,8 +29,8 @@ jobs:
           Write-Host "installing Cloudflare WARP..."
           # rolling 'latest' URL has no stable hash; TLS-only trust
           Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
-          Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $msiProc = Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait -PassThru
+          if ($msiProc.ExitCode -ne 0) { exit $msiProc.ExitCode }
           Start-Sleep -Seconds 5
           . $warpCli registration delete 2>$null
           . $warpCli --accept-tos registration new
@@ -70,6 +70,7 @@ jobs:
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SCOOP_BRANCH: develop
           SKIP_UPDATED: 1
 
       - name: Disconnect Cloudflare WARP
@@ -84,11 +85,3 @@ jobs:
                   Write-Warning "Failed to disconnect Cloudflare WARP"
               }
           }
-
-      - name: Summary
-        if: always()
-        shell: pwsh
-        run: |
-          "Excavation triggered via ${{ github.event_name }}" >> $env:GITHUB_STEP_SUMMARY
-          "Schedule: every 3 hours | Skip updated: 1" >> $env:GITHUB_STEP_SUMMARY
-          "Ref: ${{ github.ref_name }} @ ${{ github.sha }}" >> $env:GITHUB_STEP_SUMMARY
