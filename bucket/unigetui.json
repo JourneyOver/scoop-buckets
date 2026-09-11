@@ -26,7 +26,7 @@
     ],
     "innosetup": true,
     "checkver": {
-        "url": "https://api.github.com/repos/Devolutions/UniGetUI/releases",
+        "github": "https://api.github.com/repos/Devolutions/UniGetUI/releases",
         "jp": "$..tag_name",
         "re": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },

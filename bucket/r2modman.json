@@ -16,7 +16,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/ebkr/r2modmanPlus/releases",
+        "github": "https://api.github.com/repos/ebkr/r2modmanPlus/releases",
         "jp": "$..tag_name",
         "re": "(?!v)([\\d.]+(?:-[\\da-zA-Z.-]+)?)"
     },
