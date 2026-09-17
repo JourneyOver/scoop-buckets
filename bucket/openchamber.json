@@ -11,7 +11,7 @@
             "installer": {
                 "script": [
                     "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Switches \"-t7z\"",
-                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall OpenChamber.exe\", \"$dir\\uninstallerIcon.ico\" -Recurse -Force"
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall OpenChamber.exe\", \"$dir\\uninstallerIcon.ico\" -Recurse -Force -ErrorAction SilentlyContinue"
                 ]
             }
         },
@@ -21,7 +21,7 @@
             "installer": {
                 "script": [
                     "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\" -Switches \"-t7z\"",
-                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall OpenChamber.exe\", \"$dir\\uninstallerIcon.ico\" -Recurse -Force"
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\Uninstall OpenChamber.exe\", \"$dir\\uninstallerIcon.ico\" -Recurse -Force -ErrorAction SilentlyContinue"
                 ]
             }
         }

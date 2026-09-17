@@ -1,0 +1,21 @@
+{
+    "version": "7.7",
+    "description": "Tool for modifying/debugging single player games and applications.",
+    "homepage": "https://cheatengine.org",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://github.com/cheat-engine/cheat-engine/issues/60#issuecomment-467317576"
+    },
+    "url": "https://bitbucket.org/journeyover/binaries/raw/aa977df6ef37df44c3e8022457e31030efbba43b/cheat-engine/CheatEngine77.7z",
+    "hash": "1c9ee944ab4fb10cadbab48800edec22ff77e4aa475e037a819a230cb6d3a536",
+    "shortcuts": [
+        [
+            "Cheat Engine.exe",
+            "Cheat Engine"
+        ],
+        [
+            "windowsrepair.exe",
+            "Cheat Engine Windows Repair"
+        ]
+    ]
+}
