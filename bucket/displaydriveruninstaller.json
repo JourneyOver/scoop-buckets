@@ -7,7 +7,7 @@
         "url": "https://github.com/Wagnard/display-drivers-uninstaller/blob/WPF/LICENSE"
     },
     "url": "https://ftp.nluug.nl/pub/games/PC/guru3d/ddu/%5BGuru3D%5D-DDU.zip",
-    "hash": "ba45fbb030fd52e6d69fca4ffe54ac58d4969c9ff28435297c3eb0054b64a02e",
+    "hash": "a1a59d62f5adc1374512491f1f58d4497e45695297ea55f7d26b5e5b13c3f4cf",
     "pre_install": [
         "$ddu = \"DDU v$version\"",
         "Expand-7zipArchive \"$dir/$ddu.exe\" \"$dir\" -ExtractDir $ddu -Removal",
