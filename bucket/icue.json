@@ -7,7 +7,7 @@
         "url": "https://www.corsair.com/us/en/terms-of-use"
     },
     "url": "https://www3.corsair.com/software/CUE_V5/public/modules/windows/installer/Install%20iCUE.exe",
-    "hash": "7fc57cd8d658ef703e36c1d4eee3c27b21e66dc12cc240ae8840f1a50387a9fe",
+    "hash": "7ecefe7badd2b80d33dce7a82d8abc4caf2404793f17c472b6d06a7cef8145b4",
     "installer": {
         "script": [
             "$args = @('--quiet')",
