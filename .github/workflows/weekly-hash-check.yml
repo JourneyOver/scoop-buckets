@@ -81,28 +81,62 @@ jobs:
             const raw = fs.readFileSync('./hash-issues.json', 'utf8');
             const parsed = JSON.parse(raw);
             const issuesToCreate = Array.isArray(parsed) ? parsed : [parsed];
-            const existingIssues = await github.paginate(github.rest.issues.listForRepo, {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100
-            });
+            if (issuesToCreate.length === 0) {
+              return;
+            }
+            const owner = context.repo.owner;
+            const name = context.repo.repo;
+
+            // Use GraphQL to avoid the deprecated `POST /repos/{owner}/{repo}/issues` REST endpoint.
+            // Fetch repository ID and existing open issue titles in one paginated query.
+            const existingTitles = new Set();
+            let repoId = null;
+            let after = null;
+            let hasNextPage = true;
+            while (hasNextPage) {
+              const data = await github.graphql(`
+                query($owner: String!, $name: String!, $first: Int!, $after: String) {
+                  repository(owner: $owner, name: $name) {
+                    id
+                    issues(states: OPEN, first: $first, after: $after, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                      nodes { title }
+                      pageInfo { hasNextPage endCursor }
+                    }
+                  }
+                }
+              `, { owner, name, first: 100, after });
+              if (!repoId) {
+                repoId = data.repository.id;
+              }
+              for (const node of data.repository.issues.nodes) {
+                existingTitles.add(node.title);
+              }
+              hasNextPage = data.repository.issues.pageInfo.hasNextPage;
+              after = data.repository.issues.pageInfo.endCursor;
+            }
+
             for (const issue of issuesToCreate) {
               if (!issue?.title || !issue?.body) {
                 continue;
               }
-              const duplicate = existingIssues.find((existing) => existing.title === issue.title);
-              if (duplicate) {
+              if (existingTitles.has(issue.title)) {
                 core.info(`Skipping existing issue: ${issue.title}`);
                 continue;
               }
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: issue.title,
-                body: issue.body
+              const created = await github.graphql(`
+                mutation($input: CreateIssueInput!) {
+                  createIssue(input: $input) {
+                    issue { number title }
+                  }
+                }
+              `, {
+                input: {
+                  repositoryId: repoId,
+                  title: issue.title,
+                  body: issue.body
+                }
               });
-              core.info(`Created issue: ${issue.title}`);
+              core.info(`Created issue #${created.createIssue.issue.number}: ${issue.title}`);
             }
 
       - name: Upload hash check log
