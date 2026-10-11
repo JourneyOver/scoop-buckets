@@ -7,7 +7,7 @@
         "url": "http://help.mp3tag.de/misc_license.html"
     },
     "url": "https://download.mp3tag.de/mp3tagv3361-x64-setup.exe#/dl.7z",
-    "hash": "50d863ae8bb53052d3f9460e0006db7a14afb2647c7fe7f43167fa6f67998a61",
+    "hash": "3698cfaafba6edb5c3ae4d3fc5e614eb5646fd3d9ba28e1d84d606c80af191ef",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\mp3tag.cfg\")) { New-Item \"$dir\\mp3tag.cfg\" | Out-Null }",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Mp3tagUninst*\" -Recurse"
