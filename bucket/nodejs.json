@@ -1,33 +1,36 @@
 {
-    "version": "24.21.0",
-    "description": "JavaScript runtime environment. LTS",
+    "version": "26.11.1",
+    "description": "An asynchronous event driven JavaScript runtime designed to build scalable network applications.",
     "homepage": "https://nodejs.org",
     "license": "MIT",
-    "notes": "npm global prefix set to: $env:APPDATA\\npm",
     "architecture": {
         "64bit": {
-            "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-x64.7z",
-            "hash": "4e5f86609712acf841f3a5e2d9d4854b4c149f6ead024fc38381b6d7b272c636",
-            "extract_dir": "node-v24.21.0-win-x64"
+            "url": "https://nodejs.org/dist/v26.11.1/node-v26.11.1-win-x64.7z",
+            "hash": "4264e52430ee687e774a49725ec7c32040c830c1e1106de019fde4ed36d4c06b",
+            "extract_dir": "node-v26.11.1-win-x64"
+        },
+        "arm64": {
+            "url": "https://nodejs.org/dist/v26.11.1/node-v26.11.1-win-arm64.7z",
+            "hash": "b43b2118d28c9975df37772ea6c2dd1d67a05254c95d1cd576169dada8a9c855",
+            "extract_dir": "node-v26.11.1-win-arm64"
         }
     },
-    "installer": {
-        "script": [
-            "Add-Path \"$env:APPDATA\\npm\" $global",
-            "& \"$dir\\npm.cmd\" config set prefix \"$env:APPDATA\\npm\""
-        ]
-    },
-    "bin": [
-        "node.exe",
-        "npm.cmd"
+    "post_install": [
+        "# Set npm prefix to install modules inside bin and npm cache so they persist",
+        "Set-Content -Value \"prefix=$persist_dir\\bin`ncache=$persist_dir\\cache\" -Path \"$dir\\node_modules\\npm\\npmrc\""
     ],
-    "uninstaller": {
-        "script": "Remove-Path \"$env:APPDATA\\npm\" $global"
-    },
+    "env_add_path": [
+        "bin",
+        "."
+    ],
+    "persist": [
+        "bin",
+        "cache"
+    ],
     "checkver": {
         "url": "https://nodejs.org/dist/index.json",
-        "jp": "$..[?(@.lts != false)].version",
-        "re": "v([\\d\\.]+).*"
+        "jsonpath": "$[0].version",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "hash": {
@@ -37,6 +40,10 @@
             "64bit": {
                 "url": "https://nodejs.org/dist/v$version/node-v$version-win-x64.7z",
                 "extract_dir": "node-v$version-win-x64"
+            },
+            "arm64": {
+                "url": "https://nodejs.org/dist/v$version/node-v$version-win-arm64.7z",
+                "extract_dir": "node-v$version-win-arm64"
             }
         }
     }
