@@ -1,13 +1,13 @@
 {
-    "version": "2.2.0",
+    "version": "2.3.0",
     "description": "Open-source workspace for running, supervising, and reviewing AI coding agent work across desktop, web, VS Code, and mobile",
     "homepage": "https://github.com/openchamber/openchamber",
     "license": "MIT",
     "notes": "OpenChamber is an Electron app; user data (sessions, settings) is stored under %APPDATA%, outside the app directory, and is not managed by Scoop.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/openchamber/openchamber/releases/download/v2.2.0/OpenChamber-2.2.0-win-x64.exe#/dl.7z",
-            "hash": "65fb6f70082af24e80176d8f148ef98ee028029a6f6224a61dae7deb75b4aaf7",
+            "url": "https://github.com/openchamber/openchamber/releases/download/v2.3.0/OpenChamber-2.3.0-win-x64.exe#/dl.7z",
+            "hash": "feec085c60bb7951088bd268345eb21247d8272914f4c7cc9e8a8fb9bd2661c5",
             "installer": {
                 "script": [
                     "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Switches \"-t7z\"",
@@ -16,8 +16,8 @@
             }
         },
         "arm64": {
-            "url": "https://github.com/openchamber/openchamber/releases/download/v2.2.0/OpenChamber-2.2.0-win-arm64.exe#/dl.7z",
-            "hash": "f68b2d6d6b5e9459810c3d9fd4cdb8d892a0e5f15c25aada77dd9c0761e31206",
+            "url": "https://github.com/openchamber/openchamber/releases/download/v2.3.0/OpenChamber-2.3.0-win-arm64.exe#/dl.7z",
+            "hash": "ae418743ddeb5e80c847826647595042ea1714ffeb1c09be29e997353d309762",
             "installer": {
                 "script": [
                     "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\" -Switches \"-t7z\"",
