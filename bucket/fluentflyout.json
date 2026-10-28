@@ -1,5 +1,5 @@
 {
-    "version": "2.16.0",
+    "version": "2.16.1",
     "description": "The modern, open source Flyout app for Windows 11. Media Flyouts, Taskbar Widgets and more.",
     "homepage": "https://github.com/unchihugo/FluentFlyout",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://github.com/unchihugo/FluentFlyout/blob/master/LICENSE"
     },
     "notes": "Unofficial automated build from https://github.com/tailscalelogin69/FluentFlyout-AutoBuild (official binaries at files.fluentflyout.com block automated downloads).",
-    "url": "https://github.com/tailscalelogin69/FluentFlyout-AutoBuild/releases/download/v2.16.0-full/FluentFlyout-v2.16.0-Full-x64.zip",
-    "hash": "d19abc97f5ba200d7c6ef08626678e81d8218beb2aacf868dc1b603ebd50d588",
+    "url": "https://github.com/tailscalelogin69/FluentFlyout-AutoBuild/releases/download/v2.16.1-full/FluentFlyout-v2.16.1-Full-x64.zip",
+    "hash": "ee5d1eca58e5d90f3f37d4f371437d1f285fe35f6377bed823d248a65b620eff",
     "shortcuts": [
         [
             "FluentFlyout.exe",
