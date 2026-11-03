@@ -1,16 +1,12 @@
 {
-    "version": "2.25.0",
+    "version": "2.25.0.202611030932",
     "description": "Modern Plex client built with Flutter.",
     "homepage": "https://plezy.app",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/edde746/plezy/releases/download/2.25.0/plezy-windows-x64-portable.7z",
-            "hash": "b5a5be093cdc1ec33c328fe7a3c68b8d0e3c2adf032e12d6f1e49ec5ebc61000"
-        },
-        "arm64": {
-            "url": "https://github.com/edde746/plezy/releases/download/2.25.0/plezy-windows-arm64-portable.7z",
-            "hash": "70035e362f7e007c15cf97fe4cc441be128dcbd92d00db516370b9be4a544865"
+            "url": "https://github.com/JourneyOver/plezy/releases/download/nightly/plezy-windows-x64-portable.7z",
+            "hash": "46ae4efeaff92941bcab9073c1fb38fc3e917b597d2bcf1b8014317452d58fd8"
         }
     },
     "shortcuts": [
@@ -20,15 +16,23 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/edde746/plezy"
+        "script": [
+            "$headers = @{ 'User-Agent' = 'Scoop'; 'Accept' = 'application/vnd.github+json' }",
+            "if ($GitHubToken) { $headers['Authorization'] = 'token ' + $GitHubToken }",
+            "$release = Invoke-RestMethod -Uri 'https://api.github.com/repos/JourneyOver/plezy/releases' -Headers $headers | Select-Object -First 1",
+            "$appVersion = [regex]::Match($release.name, '(?i)Nightly\\s+([\\d.]+)').Groups[1].Value",
+            "if (-not $appVersion) { throw 'No nightly version found in release title' }",
+            "$asset = $release.assets | Where-Object { $_.name -eq 'plezy-windows-x64-portable.7z' } | Select-Object -First 1",
+            "if (-not $asset) { throw 'Portable asset not found in nightly release' }",
+            "$buildDate = ([datetime]$asset.updated_at).ToUniversalTime().ToString('yyyyMMddHHmm')",
+            "'{0}.{1}' -f $appVersion, $buildDate"
+        ],
+        "regex": "([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/edde746/plezy/releases/download/$version/plezy-windows-x64-portable.7z"
-            },
-            "arm64": {
-                "url": "https://github.com/edde746/plezy/releases/download/$version/plezy-windows-arm64-portable.7z"
+                "url": "https://github.com/JourneyOver/plezy/releases/download/nightly/plezy-windows-x64-portable.7z"
             }
         }
     }
