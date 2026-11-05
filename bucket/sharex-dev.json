@@ -1,12 +1,12 @@
 {
-    "version": "22.1.0.1831",
+    "version": "22.1.0.1832",
     "description": "Screen capture, file sharing and productivity tool. (Dev. Version)",
     "homepage": "https://getsharex.com",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ShareX/DevBuilds/releases/download/v22.1.0.1831/ShareX-22.1.0.1831-portable-x64.zip",
-            "hash": "32c0e24bd09da4dc07fee374c3dac9ea4dc276c392f9563ff4585c8ce4357e31"
+            "url": "https://github.com/ShareX/DevBuilds/releases/download/v22.1.0.1832/ShareX-22.1.0.1832-portable-x64.zip",
+            "hash": "aabc1c9661c956f892efaba9bcb3552d76b7f534bb26c0775de3228697e4b86b"
         }
     },
     "pre_install": "if (!(Test-Path \"$persist_dir\\PersonalPath.cfg\")) { New-Item \"$dir\\PersonalPath.cfg\" | Out-Null }",
