@@ -4,7 +4,7 @@ run-name: Hash Check (${{ github.ref_name }} @ ${{ github.sha }})
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 0"
+    - cron: "30 2 * * 6"
       timezone: 'America/Chicago'
 
 permissions:
