@@ -22,67 +22,9 @@ jobs:
       - name: Checkout bucket
         uses: actions/checkout@v7
 
-      - name: Install Cloudflare WARP
-        shell: pwsh
-        run: |
-          $ErrorActionPreference = 'Stop'
-          $warpCli = "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe"
-          Write-Host "installing Cloudflare WARP..."
-          # rolling 'latest' URL has no stable hash; TLS-only trust
-          Invoke-WebRequest -Uri "https://1111-releases.cloudflareclient.com/win/latest" -OutFile "C:\cfwarp.msi"
-          $msiProc = Start-Process "msiexec.exe" -ArgumentList "/i C:\cfwarp.msi /qn" -Wait -PassThru
-          if ($msiProc.ExitCode -ne 0) { exit $msiProc.ExitCode }
-          Start-Sleep -Seconds 5
-          . $warpCli registration delete 2>$null
-          . $warpCli --accept-tos registration new
-          @("github.com",
-            "api.github.com",
-            "*.actions.githubusercontent.com",
-            "codeload.github.com",
-            "ghcr.io",
-            "results-receiver.actions.githubusercontent.com",
-            "*.blob.core.windows.net",
-            "objects.githubusercontent.com",
-            "objects-origin.githubusercontent.com",
-            "github-releases.githubusercontent.com",
-            "github-registry-files.githubusercontent.com",
-            "*.pkg.github.com",
-            "github-cloud.githubusercontent.com",
-            "github-cloud.s3.amazonaws.com"
-           ) | ForEach-Object { . $warpCli --accept-tos tunnel host add "$_" }
-          . $warpCli --accept-tos connect
-          # Add a loop to wait for the status to be connected
-          $connected = $false
-          for ($attemptCount = 0; $attemptCount -lt 10; $attemptCount++) {
-              $output = . $warpCli --accept-tos status
-              Write-Host $output
-              if ($output -like "*Status update: Connected*") {
-                  $connected = $true
-                  break
-              }
-              Start-Sleep -Seconds 5  # Wait for 5 seconds before checking again
-          }
-          if (-not $connected) {
-              Write-Host "Failed to connect after 10 attempts."
-              exit 1  # Exit with an error code
-          }
-
       - name: Excavate
         uses: ScoopInstaller/GithubActions@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SCOOP_BRANCH: develop
           SKIP_UPDATED: 1
-
-      - name: Disconnect Cloudflare WARP
-        if: always()
-        shell: pwsh
-        run: |
-          if (Test-Path "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe") {
-              try {
-                  . "C:\Program Files\Cloudflare\Cloudflare WARP\warp-cli.exe" --accept-tos disconnect
-              }
-              catch {
-                  Write-Warning "Failed to disconnect Cloudflare WARP"
-              }
-          }
