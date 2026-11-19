@@ -1,12 +1,12 @@
 {
-    "version": "2.26.0.202611160627",
+    "version": "2.26.0.202611190658",
     "description": "Modern Plex client built with Flutter.",
     "homepage": "https://plezy.app",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
             "url": "https://github.com/JourneyOver/plezy/releases/download/nightly/plezy-windows-x64-portable.7z",
-            "hash": "8032b29ed6318e98e4b80a445efd4d95ac30c735010a86f04fb73fb94c175381"
+            "hash": "5ec8fb60219967de14282b5745436a313e1148cfa2d9e8bdb23d7f9b4ccb4bf4"
         }
     },
     "shortcuts": [
