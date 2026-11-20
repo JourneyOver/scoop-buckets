@@ -1,5 +1,5 @@
 {
-    "version": "0.34.0",
+    "version": "0.35.0",
     "description": "Configuration profiles manager and scheduler for restic backup",
     "homepage": "https://creativeprojects.github.io/resticprofile/",
     "license": {
@@ -9,12 +9,12 @@
     "depends": "journey/restic",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/creativeprojects/resticprofile/releases/download/v0.34.0/resticprofile_no_self_update_0.34.0_windows_386.tar.gz",
-            "hash": "770718bffe110b2b7f495bf52f4f5cf6593d6061bb49bc471d593d81fa76620a"
+            "url": "https://github.com/creativeprojects/resticprofile/releases/download/v0.35.0/resticprofile_no_self_update_0.35.0_windows_386.tar.gz",
+            "hash": "074cd9451a742399050e673ab1f303518dfa4af0df7d67becf921f19eb4f0eb7"
         },
         "64bit": {
-            "url": "https://github.com/creativeprojects/resticprofile/releases/download/v0.34.0/resticprofile_no_self_update_0.34.0_windows_amd64.tar.gz",
-            "hash": "9960e82809312f8a8f4a0f2eacf4bf7c393aa60504d218711543aa676afead98"
+            "url": "https://github.com/creativeprojects/resticprofile/releases/download/v0.35.0/resticprofile_no_self_update_0.35.0_windows_amd64.tar.gz",
+            "hash": "d217cb1a89ca281c0f2317e9bd2fb2e2ccf67fb70c8ee79782f4ff7a281a204c"
         }
     },
     "bin": "resticprofile.exe",
